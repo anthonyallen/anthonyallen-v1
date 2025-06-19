@@ -30,9 +30,9 @@ body {
   font-family: 'Ritual', sans-serif;
   font-size: 15px;
   line-height: 1.5;
-  max-width: 38rem;
+  max-width: 40rem;
   margin: 8vh auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
   color: var(--text);
   background: #fff;
 }
