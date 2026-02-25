@@ -158,6 +158,18 @@ section {
   }
 }
 
+.projects {
+  margin-bottom: 2rem;
+}
+
+.projects-category {
+  color: var(--muted);
+}
+
+.projects-details p {
+  margin: 0.25rem 0 0;
+}
+
 .experience {
   margin-bottom: 2rem;
 }
