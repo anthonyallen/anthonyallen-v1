@@ -156,6 +156,11 @@ section {
   .two-col-grid dd {
     margin-bottom: 1rem;
   }
+
+  .projects-category,
+  .experience-time {
+    margin-bottom: 0.35rem;
+  }
 }
 
 .projects {
