@@ -1,170 +1,827 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Anthony Allen — Creative director & designer based in Sydney, NSW. Co-owner of Brightfolk Studio.">
-  <meta name="author" content="Anthony Allen" />
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#ffffff">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Store Menangle — Since 1904</title>
+  <meta name="description" content="An unofficial fan page for The Store Menangle. Breakfast, lunch, coffee and curated groceries in a heritage building since 1904.">
+  <link rel="icon" type="image/png" href="/thestoremenangle/favicon.png">
+  <link rel="apple-touch-icon" href="/thestoremenangle/apple-touch-icon.png">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <meta property="og:title" content="The Store Menangle — Since 1904">
+  <meta property="og:description" content="Breakfast, lunch, coffee and curated groceries in Menangle, NSW.">
+  <meta property="og:image" content="https://anthonyallen.xyz/thestoremenangle/og-image.jpg">
+  <meta property="og:type" content="website">
+  <style>
+    :root {
+      font-family: Inter, sans-serif;
+      font-feature-settings: 'liga' 1, 'calt' 1;
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="Anthony Allen — Creative Direction & Design" />
-  <meta property="og:description" content="Creative Director & Designer based in Sydney NSW." />
-  <meta property="og:type" content="profile" />
-  <meta property="og:url" content="https://anthonyallen.xyz/" />
-  <meta property="og:image" content="https://anthonyallen.xyz/assets/anthony-allen.webp" />
+      --burgundy: #4A1E2A;
+      --burgundy-light: #6B3A47;
+      --cream: #F5F0E8;
+      --cream-dark: #EDE5D8;
+      --khaki: #9A8768;
+      --khaki-light: #B8A98A;
+      --khaki-pale: #D4C9B5;
+      --warm-white: #FDFBF7;
+      --text: #3A1820;
+      --text-light: #7A6068;
+    }
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Anthony Allen — Creative Direction & Design" />
-  <meta name="twitter:description" content="Creative Director & Designer based in Sydney NSW." />
-  <meta name="twitter:image" content="https://anthonyallen.xyz/assets/anthony-allen.webp" />
+    @supports (font-variation-settings: normal) {
+      :root { font-family: InterVariable, sans-serif; }
+    }
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://anthonyallen.xyz/" />
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <!-- Icons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-  <link rel="manifest" href="assets/site.webmanifest">
-  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-  <!-- Fonts + Image Preload -->
-  <link rel="preload" href="fonts/Ritual-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="assets/anthony-allen.webp" as="image" type="image/webp">
+    body {
+      background-color: var(--cream);
+      color: var(--text);
+      font-weight: 420;
+      font-size: 16px;
+      line-height: 1.55;
+    }
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css" />
+    /* ---- HEADER ---- */
 
-  <!-- Schema: Person -->
+    .header {
+      background-color: var(--burgundy);
+      padding: 44px 24px 40px;
+      text-align: center;
+    }
+
+    .logo-mark {
+      display: inline-block;
+      width: 110px;
+      height: auto;
+      margin-bottom: 10px;
+      opacity: 0.85;
+    }
+
+    .header h1 {
+      color: var(--cream);
+      font-weight: 650;
+      font-size: 13px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .header .since {
+      color: var(--khaki-light);
+      font-weight: 420;
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .header .intro {
+      color: var(--khaki-light);
+      font-weight: 380;
+      font-size: 13.5px;
+      line-height: 1.6;
+      max-width: 460px;
+      margin: 0 auto;
+      opacity: 0.88;
+    }
+
+    .header .intro a {
+      color: var(--cream);
+      text-decoration: none;
+      border-bottom: 1px solid var(--khaki);
+      transition: border-color 0.2s;
+    }
+
+    .header .intro a:hover {
+      border-color: var(--cream);
+    }
+
+    /* ---- INFO BAR ---- */
+
+    .info-bar {
+      background-color: var(--warm-white);
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 28px 24px;
+    }
+
+    .info-grid {
+      max-width: 720px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      text-align: center;
+    }
+
+    .info-grid dt {
+      font-weight: 580;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--khaki);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .info-grid dt .icon {
+      width: 13px;
+      height: 13px;
+      flex-shrink: 0;
+      position: relative;
+      top: -0.5px;
+    }
+
+    .info-grid dd {
+      font-weight: 440;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .info-grid dd a {
+      color: var(--burgundy);
+      text-decoration: none;
+      border-bottom: 1px solid var(--khaki-pale);
+      transition: border-color 0.2s;
+    }
+
+    .info-grid dd a:hover {
+      border-color: var(--burgundy);
+    }
+
+    .info-grid .rating {
+      font-weight: 620;
+      color: var(--burgundy);
+    }
+
+    /* ---- HOURS ---- */
+
+    .hours-section {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 0;
+    }
+
+    .hours-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px 32px;
+      max-width: 320px;
+    }
+
+    .hours-table .day {
+      font-weight: 500;
+      font-size: 14px;
+      padding: 5px 0;
+    }
+
+    .hours-table .time {
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--text-light);
+      text-align: right;
+      padding: 5px 0;
+    }
+
+    .hours-table .today .day {
+      color: var(--burgundy);
+      font-weight: 620;
+    }
+
+    .hours-table .today .time {
+      color: var(--burgundy);
+      font-weight: 500;
+    }
+
+    /* ---- SECTION HEADINGS ---- */
+
+    .section-label {
+      font-weight: 650;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--khaki);
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--khaki-pale);
+      display: inline-block;
+    }
+
+    /* ---- MENU ---- */
+
+    .menu-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    .menu-section {
+      margin-bottom: 48px;
+    }
+
+    .menu-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .menu-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .menu-item:first-of-type {
+      border-top: none;
+    }
+
+    .menu-item-name {
+      font-weight: 580;
+      font-size: 15px;
+      color: var(--burgundy);
+      line-height: 1.3;
+    }
+
+    .menu-item-price {
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--khaki);
+      text-align: right;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .menu-item-desc {
+      grid-column: 1 / -1;
+      font-weight: 380;
+      font-size: 13.5px;
+      color: var(--text-light);
+      line-height: 1.5;
+      max-width: 540px;
+    }
+
+    .menu-item-add {
+      grid-column: 1 / -1;
+      font-weight: 460;
+      font-size: 12px;
+      color: var(--khaki);
+      margin-top: 2px;
+    }
+
+    /* ---- EXTRAS GRID ---- */
+
+    .extras-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0 32px;
+    }
+
+    .extras-grid .menu-item {
+      grid-template-columns: 1fr auto;
+    }
+
+    .extras-grid .menu-item-name {
+      font-weight: 480;
+      font-size: 14px;
+    }
+
+    /* ---- CONDIMENTS ---- */
+
+    .condiments-list {
+      font-weight: 420;
+      font-size: 13.5px;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    /* ---- GROCERY NOTE ---- */
+
+    .grocery-note {
+      background-color: var(--warm-white);
+      border-top: 1px solid var(--cream-dark);
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .grocery-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 36px 24px;
+    }
+
+    .grocery-inner p {
+      font-weight: 400;
+      font-size: 14.5px;
+      color: var(--text-light);
+      line-height: 1.65;
+      max-width: 560px;
+    }
+
+    .grocery-inner .section-label {
+      margin-bottom: 14px;
+    }
+
+    /* ---- FOOTER PHOTO ---- */
+
+    .footer-photo {
+      width: 100%;
+      display: block;
+    }
+
+    .footer-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: contrast(1.02) saturate(0.9);
+    }
+
+    /* ---- FOOTER INFO ---- */
+
+    .footer {
+      background-color: var(--burgundy);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .footer p {
+      font-weight: 400;
+      font-size: 12px;
+      color: var(--khaki-light);
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+    }
+
+    .footer a {
+      color: var(--cream);
+      text-decoration: none;
+      border-bottom: 1px solid var(--khaki);
+      transition: border-color 0.2s;
+    }
+
+    .footer a:hover {
+      border-color: var(--cream);
+    }
+
+    .footer .fan-note {
+      margin-top: 16px;
+      font-size: 11.5px;
+      color: var(--khaki-light);
+      font-style: italic;
+      letter-spacing: 0;
+      opacity: 0.75;
+    }
+
+    .footer .fan-note a {
+      color: var(--khaki-light);
+      border-bottom-color: rgba(184, 169, 138, 0.4);
+    }
+
+    .footer .fan-note a:hover {
+      color: var(--cream);
+      border-bottom-color: var(--cream);
+    }
+
+    /* ---- RESPONSIVE ---- */
+
+    @media (max-width: 540px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .extras-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hours-table {
+        max-width: 100%;
+      }
+    }
+  </style>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Anthony Allen",
-    "alternateName": "Tony Allen",
-    "jobTitle": "Creative Director & Designer",
-    "url": "https://anthonyallen.xyz",
-    "image": "https://anthonyallen.xyz/assets/anthony-allen.webp",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Brightfolk Studio",
-      "url": "https://brightfolk.studio"
-    },
-    "sameAs": [
-      "https://x.com/nthonyallen",
-      "https://www.linkedin.com/in/anthonyallen-/",
-      "https://bsky.app/profile/nthonyallen.bsky.social",
-      "https://threads.net/@anthonyallen"
-    ]
-  }
-  </script>
-
-  <title>Anthony Allen — Creative Direction &amp; Design</title>
-    
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BDVMBFKG1M"></script>
-  <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-BDVMBFKG1M');
-  </script>
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "The Store Menangle",
+      "image": "https://anthonyallen.xyz/thestoremenangle/thestoremenangle.jpg",
+      "description": "Breakfast, lunch, coffee and curated groceries in a heritage building since 1904.",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "14:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday"],
+          "opens": "08:00",
+          "closes": "14:00"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2 Station St",
+        "addressLocality": "Menangle",
+        "addressRegion": "NSW",
+        "postalCode": "2568",
+        "addressCountry": "AU"
+      },
+      "telephone": "+61246338101",
+      "priceRange": "$$",
+      "hasMenu": {
+        "@type": "Menu",
+        "name": "Main Menu",
+        "mainEntityOfPage": "https://anthonyallen.xyz/thestoremenangle",
+        "hasMenuSection": [
+          {
+            "@type": "MenuSection",
+            "name": "Breakfast",
+            "hasMenuItem": [
+              {
+                "@type": "MenuItem",
+                "name": "Eggs Benny",
+                "description": "Two free-range eggs, spinach & Hollandaise sauce on a toasted Sonoma croissant.",
+                "offers": { "@type": "Offer", "price": "22.00", "priceCurrency": "AUD" }
+              }
+            ]
+          }
+        ]
+      }
+    }
+    </script>
 </head>
 <body>
-  <main>
-    <header class="hero">
-      <img src="assets/anthony-allen.webp" alt="Anthony Allen" class="headshot" />
+
+  <!-- HEADER -->
+  <header class="header">
+    <div>
+      <svg class="logo-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 438 200" fill="none">
+        <g fill="#F5F0E8" clip-path="url(#a)"><path d="m435.99 188.11-33.01-.09v-37.28l34.06-.19-62.73-74.63-52.26-.09c-.31-4.05-.29-7.08.06-11.8l9.54 7.7 7.61-8.43L271.5.01l-53.21 54.51L165.04 0 97.41 63.18l7.54 8.7 9.64-8.13.08 12.05H87.39l-.79-5.86-10.79.16c-.45 2.7-.85 4.83-1.15 5.59l-12.84.65L0 150.16c10.57.65 19.26.53 29.83.57v37.3l-28.77.16.14 11.1h434.99c-.81-4.07-.79-7.17-.2-11.18m-4.69 8.35H5.42c-1.79-.48-1.78-5.38-.46-5.39l27.74-.24-.07-42.82-26.91-.37 57.73-68.79 14.68-.28.47-5.19c.1-1.07 3.34-.95 4.35-.58 1.21.44 1.15 3.13 1.04 5.7l33.65.11-.16-21.38L106 67.02c-1.14.97-5.17-3.1-3.94-4.25l62.91-58.8 40.92 42.05 12.74 12.25 52.96-54.28 62.93 58.8c1.16 1.08-2.91 5.1-3.88 4.36l-11.56-9.99-.24 21.47 54.16.11 57.83 68.89-30.71.36.07 42.88 31.4.13c1.31.01 1.51 3.81-.29 5.46"/><path d="m66.73 85.76-46.57 55.27 93.65-.25v-36.8h3.87l-.09-18.32zM115 100.99h-3.91v36.97H26.68l41.49-49.52H115zM322.79 140.671l93.05.07-46.16-55.11-50.79.1.07 18.25h3.55zm-.97-52.21 46.55-.03 41.51 49.54-84.17.15-.36-37.14h-3.53zM314.53 65.13l-.11-12.86-42.68-39.82-48.65 49.82c2.89-.19 6.28-.78 9.38-1.66 12.48-3.54 24.8-.84 36.24 6.47 15.02-7.99 30.32-8 45.82-1.95m-45.51-1.19c-11.03-7.05-22.69-8.76-36.43-7.04l16.67-16.91.04-.04 22.47-23.7 1.36 1.36L298.5 41.5l12.44 11.55c1.24 1.24.81 6.02.22 7.8-14.31-4.35-28.32-4.18-42.14 3.09M210.95 61.88c.53-.15-.06-2.17-.74-2.86L164.8 12.51l-42.66 39.74-.06 12.99c15.69-6.61 30.96-5.65 46.27 1.82 21.09-14.78 38.74-4.14 42.6-5.18m-43.3 2.08c-13.39-6.91-27.83-7.77-42.09-3.03-1.88-4.36-.39-7.78 2.52-10.46l19.51-17.99 13.81-12.87 3.22-3.23 2.79 2.99.16.16 12.69 13.24 23.56 23.97c-13.62-1.31-25.36-.03-36.17 7.22M269.02 145.8v44.91l45.49.08-.03-45.05zm2.86 42.2v-39.46h39.74l.06 39.39zM122.09 145.74v44.96l45.42.08-.03-45.12zm2.85 42.25v-39.46h39.68l.06 39.39z"/><path d="m122.05 70.38.11 33.59 45.58-.05-.06-31.73c-14.06-8.71-31-9.68-45.63-1.81m2.88 30.73-.09-28.97c12.71-6.19 27.08-5.51 39.97 1.46l.15 27.46zM268.75 72.17l.12 31.811 45.75-.08-.23-33.72c-15.21-7.61-31.57-6.68-45.64 1.99m2.91 28.951-.15-27.18c12.03-7.31 26.46-8 40.09-2.11l.19 29.22zM173.66 145.719l.06 45.14 42.44-.08-.03-45.09zm2.9 42.31-.09-39.42 36.87-.15.05 39.45zM215.85 70.94c-13.21-9.52-30.58-10.21-43.81-1.05l.16 34.09 43.73-.12zm-40.88 30.17-.09-29.76c11.87-7.36 26.34-6.63 38.13 1.02l.15 28.44zM38.88 147.93l-.04 42.96 37.04-.12-.04-42.81zm2.86 40.09-.1-37.24 31.3-.17.16 37.03zM356.9 147.9v42.89l36.99-.08-.04-42.78zm2.87 40.11-.1-37.23 31.28-.17.17 37.03zM222.36 145.71l.02 45.09 40.53-.09-.09-45.04zm2.78 42.28v-39.47l34.84-.04.09 39.45zM320.72 147.95l-.02 42.9 30.03-.09-.08-42.86zm2.87 40.05-.08-37.21 24.29-.17.13 36.96zM220.54 70.87l.09 33.079 43.71-.06-.03-34.26c-13.68-8.83-30.42-8.17-43.77 1.24m2.75 30.249-.02-28.62c11.41-7.68 25.48-8.48 38.19-1.45l.15 29.99zM82.14 147.94l-.06 42.74h33.8l-.04-42.75h-33.7zm2.82 40.02v-37.27l28.02-.03.1 37.22zM164.27 23.33c-6.26 0-11.35 5.09-11.35 11.35s5.09 11.35 11.35 11.35 11.35-5.09 11.35-11.35-5.09-11.35-11.35-11.35m0 19.95c-4.74 0-8.6-3.86-8.6-8.6s3.86-8.6 8.6-8.6 8.6 3.86 8.6 8.6-3.86 8.6-8.6 8.6"/><path d="M164.27 28.72c-3.29 0-5.96 2.67-5.96 5.96s2.67 5.96 5.96 5.96 5.96-2.67 5.96-5.96-2.67-5.96-5.96-5.96m0 9.16c-1.77 0-3.21-1.44-3.21-3.21s1.44-3.21 3.21-3.21 3.21 1.44 3.21 3.21-1.44 3.21-3.21 3.21M272.16 23.33c-6.26 0-11.35 5.09-11.35 11.35s5.09 11.35 11.35 11.35 11.35-5.09 11.35-11.35-5.09-11.35-11.35-11.35m0 19.95c-4.74 0-8.6-3.86-8.6-8.6s3.86-8.6 8.6-8.6 8.6 3.86 8.6 8.6-3.86 8.6-8.6 8.6"/><path d="M272.16 28.72c-3.29 0-5.96 2.67-5.96 5.96s2.67 5.96 5.96 5.96 5.96-2.67 5.96-5.96-2.67-5.96-5.96-5.96m0 9.16c-1.77 0-3.21-1.44-3.21-3.21s1.44-3.21 3.21-3.21 3.21 1.44 3.21 3.21-1.44 3.21-3.21 3.21"/></g><defs><clipPath id="a"><path fill="#F5F0E8" d="M0 0h437.04v199.3H0z"/></clipPath></defs>
+      </svg>
+      <h1>The Store Menangle</h1>
+      <p class="since">Since 1904</p>
+      <p class="intro">The Store is a beloved community icon in Menangle, NSW. They don't have a website, so <a href="https://anthonyallen.xyz">I made this unofficial one</a>.</p>
+    </div>
+  </header>
+
+  <!-- INFO BAR -->
+  <div class="info-bar">
+    <dl class="info-grid">
       <div>
-        <h1>Anthony Allen</h1>
-        <p class="hero-lead">
-            Creative Director &amp; Designer &middot; Sydney, NSW</p>
-        <span class="availability-badge">
-          <span class="dot"></span>
-          Limited availability
-        </span>
+        <dt>
+          <!-- Map Pin icon (Lucide-style) -->
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          Address
+        </dt>
+        <dd><a href="https://share.google/nB0n1uiCns1uiPZvu" target="_blank" rel="noopener">2 Station St<br>Menangle NSW 2568</a></dd>
       </div>
-    </header>
-
-    <section>
-      <h2>About</h2>
-        <p>I’m a creative director, designer, and web guy at <a href="https://www.brightfolk.studio/">Brightfolk Studio</a>, working with people who know their craft &mdash; and want their online presence to feel as thoughtful as their work. Mostly founders and small teams.</p>
-      <p>I love the research up front and the fussy bits at the end. Strategy, structure, and the final teensy nudge to letter spacing.</p>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <dl class="contact-list two-col-grid">
-        <dt>Email</dt>
-        <dd><a href="mailto:tony@brightfolk.studio">tony@brightfolk.studio</a></dd>
-        <dt>Website</dt>
-        <dd><a href="https://brightfolk.studio">brightfolk.studio</a></dd>
-        <dt>LinkedIn</dt>
-        <dd><a href="https://linkedin.com/in/anthonyallen-">@anthonyallen-</a></dd>
-        <dt>Threads</dt>
-        <dd><a href="https://threads.net/@anthonyallen">@anthonyallen</a></dd>
-        <dt>Bluesky</dt>
-        <dd><a href="https://bsky.app/profile/nthonyallen.bsky.social">@nthonyallen</a></dd>
-        <dt>X / Twitter</dt>
-        <dd><a href="https://x.com/nthonyallen">@nthonyallen</a></dd>
-      </dl>
-    </section>
-
-    <section>
-      <h2>Work Experience</h2>
-
-      <div class="experience two-col-grid">
-        <div class="experience-time">2024–Now</div>
-        <div class="experience-details">
-          <strong>Co-Owner &amp; Creative Director at Brightfolk Studio</strong>
-            <div class="job-location">Sydney, NSW</div>
-          <p>Studio for small, expert-led businesses — from HR consultants and cybersecurity specialists to photographers and home renovators. I lead strategy, identity design, websites, and marketing assets that help clients win ideal work and communicate with clarity.</p>
-        </div>
+      <div>
+        <dt>
+          <!-- Phone icon (Lucide-style) -->
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          Contact
+        </dt>
+        <dd><a href="tel:0246338101">(02) 4633 8101</a><br>
+        <a href="https://instagram.com/thestoremenangle" target="_blank" rel="noopener">@thestoremenangle</a></dd>
       </div>
-
-      <div class="experience two-col-grid">
-        <div class="experience-time">2018–2024</div>
-        <div class="experience-details">
-          <strong>Director of Communications at Hunter Bible Church</strong>
-            <div class="job-location">Newcastle, NSW</div>
-          <p>Directed communications for a 1400+ person organisation, growing year-on-year. Led a volunteer team of a dozen creatives to deliver weekly internal comms, public campaigns, fundraising, and event marketing across digital and print.</p>
-        </div>
+      <div>
+        <dt>
+          <!-- Star icon (Lucide-style) -->
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Google Reviews
+        </dt>
+        <dd><a href="https://share.google/nB0n1uiCns1uiPZvu" target="_blank" rel="noopener"><span class="rating">4.7</span> · 229 reviews</a></dd>
       </div>
+    </dl>
+  </div>
 
-      <div class="experience two-col-grid">
-        <div class="experience-time">2016–2017</div>
-        <div class="experience-details">
-          <strong>Digital Marketing Specialist at Compassion Australia</strong>
-            <div class="job-location">Newcastle, NSW</div>
-          <p>Improved digital engagement through UX-focused design and front-end development. Partnered with marketing and product teams to turn complex messaging into intuitive, supporter-friendly experiences.</p>
-        </div>
-      </div>
+  <!-- HOURS + MENU -->
+  <div class="menu-wrap">
 
-      <div class="experience two-col-grid">
-        <div class="experience-time">2011–2013</div>
-        <div class="experience-details">
-          <strong>Web Designer & Front-End Developer at Redback Solutions</strong>
-            <div class="job-location">Newcastle, NSW</div>
-          <p>Designed and built client websites — from brand identity to front-end code. Worked across education, health, and retail sectors to create high-performing, conversion-focused digital platforms.</p>
-        </div>
-      </div>
-
-      <div class="experience two-col-grid">
-        <div class="experience-time">2010</div>
-        <div class="experience-details">
-          <strong>Graphic & Web Designer at GSES Global Sustainable Energy Solutions</strong>
-            <div class="job-location">Sydney, NSW</div>
-          <p>Developed visual content and managed web updates for a niche engineering provider. Helped make technical material more accessible through simple, thoughtful design.</p>
-        </div>
+    <!-- HOURS -->
+    <section class="menu-section">
+      <div class="section-label">Hours</div>
+      <div class="hours-table" id="hours-table">
+        <div class="row" data-days="1,2,3,4"><span class="day">Monday – Friday</span></div>
+        <div class="row" data-days="1,2,3,4"><span class="time">7 am – 2 pm</span></div>
+        <div class="row" data-days="5,6"><span class="day">Saturday – Sunday</span></div>
+        <div class="row" data-days="5,6"><span class="time">8 am – 2 pm</span></div>
       </div>
     </section>
 
-    <footer class="site-footer">
-        &copy; <script>document.write(new Date().getFullYear())</script> Anthony Allen / Tony Allen
-    </footer>
-  </main>
+    <!-- BREAKFAST -->
+    <section class="menu-section">
+      <div class="section-label">Breakfast</div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Eggs Benny</span>
+        <span class="menu-item-price">$22</span>
+        <span class="menu-item-desc">Two free-range eggs, spinach &amp; Hollandaise sauce on a toasted Sonoma croissant.</span>
+        <span class="menu-item-add">Bacon 26 · Salmon 27 · Roasted Mushrooms 25</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Zucchini Nest</span>
+        <span class="menu-item-price">$23.50</span>
+        <span class="menu-item-desc">Toasted sourdough topped with seasoned ricotta, shaved zucchini, crushed toasted almonds, hemp seeds, fresh basil pesto &amp; soft poached free-range egg.</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Persian Eggs</span>
+        <span class="menu-item-price">$22</span>
+        <span class="menu-item-desc">Two poached free-range eggs on a bed of herbed yoghurt, topped with an aromatic chilli butter, fresh herbs &amp; toasted sourdough.</span>
+        <span class="menu-item-add">Add Chorizo 6</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Tomato Harvest</span>
+        <span class="menu-item-price">$24</span>
+        <span class="menu-item-desc">Melody of tomatoes, smashed avocado, olive oil, fresh herbs topped on sourdough with herb oil.</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Brisket &amp; Hash</span>
+        <span class="menu-item-price">$26.50</span>
+        <span class="menu-item-desc">Rosemary roasted potatoes, English spinach, 16hr house smoked brisket, poached free-range egg, sweet potato shavings &amp; smoked Hollandaise sauce.</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Dirty Breakfast Sandwich</span>
+        <span class="menu-item-price">$22</span>
+        <span class="menu-item-desc">Free-range egg, pork sausage, bacon, hashbrown, American cheddar, rocket &amp; Kielty's BBQ sauce on a Turkish roll.</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Breakfast Burger</span>
+        <span class="menu-item-price">$15</span>
+        <span class="menu-item-desc">Bacon, free-range egg, Kewpie mayo, cheese, rocket &amp; smokey tomato relish on a milk bun.</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Halloumi Burger</span>
+        <span class="menu-item-price">$15.50</span>
+        <span class="menu-item-desc">Halloumi, grilled capsicum &amp; zucchini, Kewpie mayo, rocket &amp; beetroot relish on a milk bun.</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Classic Eggs on Toast</span>
+        <span class="menu-item-price">$14</span>
+        <span class="menu-item-desc">Poached, fried or scrambled free-range eggs on sourdough.</span>
+        <span class="menu-item-add">Add Bacon 6 · Hashbrown 3</span>
+      </div>
+    </section>
+
+    <!-- SOMETHING LIGHT -->
+    <section class="menu-section">
+      <div class="section-label">Something Light</div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Sourdough Toast</span>
+        <span class="menu-item-price">$8</span>
+        <span class="menu-item-desc">Served with Pepe Saya butter &amp; choice of Vegemite, jam, honey or peanut butter.</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Sonoma Fruit Toast</span>
+        <span class="menu-item-price">$12</span>
+        <span class="menu-item-desc">With lemon mascarpone &amp; honey.</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Banana Bread</span>
+        <span class="menu-item-price">$9</span>
+        <span class="menu-item-desc">Thick sliced, toasted &amp; served with Pepe Saya butter.</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Toasties</span>
+        <span class="menu-item-price">$12.50</span>
+        <span class="menu-item-desc">Ham, Swiss cheese &amp; Dijon · Tomato, cheese &amp; fresh basil · Herb, mushroom &amp; goat's cheese</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Fresh Sandwiches &amp; Wraps</span>
+        <span class="menu-item-price">$15.50</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Pies &amp; Sausage Rolls</span>
+        <span class="menu-item-price">$6.50</span>
+        <span class="menu-item-add">Add Fries 5 · Gravy 3</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Fries</span>
+        <span class="menu-item-price">$5.50</span>
+        <span class="menu-item-add">Bowl 8</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Sweet Potato Fries</span>
+        <span class="menu-item-price">$6.50</span>
+        <span class="menu-item-add">Bowl 9</span>
+      </div>
+    </section>
+
+    <!-- LUNCH -->
+    <section class="menu-section">
+      <div class="section-label">Lunch</div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">TSM Burger</span>
+        <span class="menu-item-price">$23</span>
+        <span class="menu-item-desc">Beef patty, Coney Island mustard, onion, pickles, lettuce, tomato, American cheddar &amp; Kielty's tomato sauce, with fries.</span>
+        <span class="menu-item-add">Add Fried Egg 3 · Burger Bacon 4</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Triple B</span>
+        <span class="menu-item-price">$26</span>
+        <span class="menu-item-desc">Beef patty, free-range bacon, 16hr house smoked brisket, Swiss cheese, pickles &amp; smokey hickory &amp; brown sugar BBQ sauce.</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Spicy Kimchi Burger</span>
+        <span class="menu-item-price">$24</span>
+        <span class="menu-item-desc">House-made buttermilk fried chicken with a spicy Korean hot honey sauce &amp; kimchi slaw.</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Menangle Monster Schnitzel</span>
+        <span class="menu-item-price">$27</span>
+        <span class="menu-item-desc">350g chicken schnitzel, seasoned balsamic green slaw, fries &amp; fresh lemon wedge.</span>
+        <span class="menu-item-add">Add Gravy 3</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Pan-Fried Barramundi</span>
+        <span class="menu-item-price">$28</span>
+        <span class="menu-item-desc">Crisp fried barramundi fillet over pearl couscous, finished with preserved lemons and house-made Mediterranean red sauce of olives and capers.</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Shredded Brisket Tacos</span>
+        <span class="menu-item-price">$24</span>
+        <span class="menu-item-desc">Trio of house-made 16hr beef brisket tacos with fresh red cabbage, avocado, pickled onions, chipotle mayo &amp; queso fresco.</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Open Steak Sandwich</span>
+        <span class="menu-item-price">$25</span>
+        <span class="menu-item-desc">Parmesan butter, caramelised onions, rocket, tomato &amp; house-made persillade dressing, with fries.</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Misty Valley Mushrooms</span>
+        <span class="menu-item-price">$23</span>
+        <span class="menu-item-desc">Casarecce pasta topped with local exotic mushrooms from Misty Valley Mittagong, sautéed in herbed butter, finished with shaved parmesan.</span>
+        <span class="menu-item-add">Add Chicken 6</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">TSM Caesar Salad</span>
+        <span class="menu-item-price">$22</span>
+        <span class="menu-item-desc">Classic Caesar salad with sourdough crumble.</span>
+        <span class="menu-item-add">Add Chicken 6 · Anchovies 2</span>
+      </div>
+
+      <div class="menu-item">
+        <span class="menu-item-name">Soup of the Day</span>
+        <span class="menu-item-price">$14.50</span>
+        <span class="menu-item-desc">Ask the staff for today's offering, served with toasted sourdough.</span>
+      </div>
+    </section>
+
+    <!-- EXTRAS -->
+    <section class="menu-section">
+      <div class="section-label">Extras</div>
+      <div class="extras-grid">
+        <div class="menu-item">
+          <span class="menu-item-name">Smoked Salmon</span>
+          <span class="menu-item-price">$7</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item-name">Bacon</span>
+          <span class="menu-item-price">$6</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item-name">Smashed Avocado</span>
+          <span class="menu-item-price">$6</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item-name">Halloumi</span>
+          <span class="menu-item-price">$6</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item-name">Chicken</span>
+          <span class="menu-item-price">$6</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item-name">Beef Patty</span>
+          <span class="menu-item-price">$6</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item-name">Mushroom</span>
+          <span class="menu-item-price">$5</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item-name">Roasted Tomato</span>
+          <span class="menu-item-price">$5</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item-name">Burger Bacon</span>
+          <span class="menu-item-price">$4</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item-name">Free-Range Egg</span>
+          <span class="menu-item-price">$3</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item-name">Hashbrown</span>
+          <span class="menu-item-price">$3</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item-name">Gravy</span>
+          <span class="menu-item-price">$3</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item-name">Gluten Free</span>
+          <span class="menu-item-price">$3</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item-name">Cheese</span>
+          <span class="menu-item-price">$2</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONDIMENTS -->
+    <section class="menu-section">
+      <div class="section-label">Condiments · $2</div>
+      <p class="condiments-list">
+        Kielty's BBQ Sauce · Kielty's Tomato Sauce · Drunken Sailor Tomato Relish · Drunken Sailor Beetroot Relish · Garlic Aioli · House-Made Nashville Chilli Sauce · Kewpie Mayo
+      </p>
+    </section>
+
+  </div>
+
+  <!-- GROCERY NOTE -->
+  <div class="grocery-note">
+    <div class="grocery-inner">
+      <div class="section-label">The General Store</div>
+      <p>Beyond the cafe, The Store stocks a curated selection of premium groceries and local products. Artisan pasta, sauces, coffee beans, spreads, condiments, BBQ sauces, anchovies, and more, all carefully sourced. A good spot for gifts or stocking up on things you won't find at Woolies.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER PHOTO -->
+  <div class="footer-photo">
+    <img src="/thestoremenangle/thestoremenangle.jpg" alt="The Store Menangle, a heritage building on Station Street, Menangle, built in 1904." loading="lazy" width="1600" height="1066">
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>
+      <a href="https://share.google/nB0n1uiCns1uiPZvu" target="_blank" rel="noopener">2 Station St, Menangle NSW 2568</a>
+      &nbsp;·&nbsp;
+      <a href="tel:0246338101">(02) 4633 8101</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:admin@thestoremenangle.com.au">admin@thestoremenangle.com.au</a>
+      &nbsp;·&nbsp;
+      <a href="https://instagram.com/thestoremenangle" target="_blank" rel="noopener">Instagram</a>
+    </p>
+    <p class="fan-note">This page is not affiliated with or endorsed by The Store Menangle, and was made by <a href="https://anthonyallen.xyz">Anthony Allen</a>.</p>
+  </footer>
+
+  <!-- Highlight today's hours -->
+  <script>
+    (function() {
+      var day = new Date().getDay(); // 0=Sun, 1=Mon...6=Sat
+      var rows = document.querySelectorAll('#hours-table .row');
+      rows.forEach(function(row) {
+        var days = row.getAttribute('data-days').split(',').map(Number);
+        // Map: JS 0=Sun->6, 1=Mon->0, 2=Tue->1, 3=Wed->2, 4=Thu->3, 5=Fri->4, 6=Sat->5
+        var mapped = day === 0 ? 6 : day - 1;
+        if (days.indexOf(mapped) !== -1) {
+          row.classList.add('today');
+        }
+      });
+    })();
+  </script>
+
 </body>
 </html>
