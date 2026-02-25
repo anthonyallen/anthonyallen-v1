@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>✲ QuickGlyphs — Unicode Symbol Clipboard Tool</title>
+  <meta name="description" content="A curated set of unicode symbols, glyphs and ASCII art — click to copy. Arrows, stars, shapes, dots and more.">
+  <meta name="author" content="Anthony Allen">
+  <meta name="theme-color" content="#f7f7f4">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="✲ QuickGlyphs — Unicode Symbol Clipboard Tool">
+  <meta property="og:description" content="A curated set of unicode symbols, glyphs and ASCII art — click to copy.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://anthonyallen.xyz/quickglyphs/">
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "QuickGlyphs",
+    "url": "https://anthonyallen.xyz/quickglyphs/",
+    "description": "A curated set of unicode symbols, glyphs and ASCII art — click to copy.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "AUD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Anthony Allen",
+      "url": "https://anthonyallen.xyz"
+    }
+  }
+  </script>
+
+  <!-- Inter -->
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+  <style>
+    /* Global typography & emoji handling */
+    :root{
+      font-family: Inter, sans-serif;
+      font-feature-settings:"liga", "calt", "ss07", "ss08", "ss01", "cv06", "cv10", "cv12", "cv13";
+      font-variant-emoji: text; /* force text glyphs (no color emoji) */
+      --bg: #f7f7f4;         /* page background */
+      --card: #f2f1ed;       /* tile background (subtle) */
+      --card-border: #ecebe8;/* tile border */
+      --card-hover: #fff; /* hover bg */
+      --text: #0a0a0a;       /* primary text */
+      --muted: #737373;      /* section titles */
+    }
+    @supports (font-variation-settings: normal){
+      :root{ font-family: InterVariable, sans-serif; }
+    }
+
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    body{
+      background:var(--bg);
+      color:var(--text);
+      min-height:100vh;
+      padding:2rem 1rem;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    .container{ max-width:980px; margin:0 auto; }
+    header{ margin-bottom:3rem; text-align:center; }
+
+    h1{
+      font-size:1.5rem;
+      font-weight:600;
+      letter-spacing:-0.02em;
+      color:var(--text);
+    }
+
+    .section-title{
+      font-size:.75rem;
+      font-weight:500;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      margin:2rem 0 1rem;
+    }
+    .section-title:first-child{ margin-top:0; }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(80px, 1fr));
+      gap:.75rem;
+      margin-bottom:2rem;
+    }
+
+    .grid-ascii{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+      gap:.75rem;
+      margin-bottom:2rem;
+    }
+
+    .glyph-btn{
+      aspect-ratio:1;
+      background:var(--card);
+      border:1px solid var(--card-border);
+      border-radius:5px;
+      font-size:2rem;
+      cursor:pointer;
+      transition:transform .15s ease, background-color .15s ease, border-color .15s ease, box-shadow .15s ease;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--text);
+      position:relative;
+      overflow:hidden;
+      font-family: Inter, sans-serif;
+    }
+
+    .grid-ascii .glyph-btn{
+      padding:1.5rem;
+      font-size:1.2rem;
+      aspect-ratio:auto;
+    }
+
+    .glyph-btn:hover{
+      background:var(--card-hover);
+      border-color:#e3e3e1;
+      transform:translateY(-1px);
+    }
+    .glyph-btn:active{ transform:translateY(0); }
+
+    .glyph-btn.copied{
+      background:#0a0a0a;
+      color:#fff;
+      border-color:#0a0a0a;
+    }
+    .glyph-btn.copied::after{
+      content:'Copied';
+      position:absolute;
+      font-size:.65rem;
+      font-weight:500;
+      letter-spacing:.02em;
+      bottom:6px; left:50%;
+      transform:translateX(-50%);
+      text-transform:uppercase;
+    }
+
+    footer{
+      text-align:center;
+      margin-top:4rem;
+      padding-top:2rem;
+      border-top:1px solid var(--card-border);
+      color:#a3a3a3;
+      font-size:.875rem;
+    }
+
+    @media (max-width:640px){
+      .grid{
+        grid-template-columns:repeat(auto-fit, minmax(60px, 1fr));
+        gap:.5rem;
+      }
+      .glyph-btn{ font-size:1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header><h1><span style="color: var(--muted); margin-right:0.25em;">✲</span>QuickGlyphs</h1></header>
+
+    <!-- Arrows -->
+    <div class="section-title">Arrows</div>
+    <div class="grid">
+      <button class="glyph-btn" data-glyph="→">→</button>
+      <button class="glyph-btn" data-glyph="↗">↗</button>
+      <button class="glyph-btn" data-glyph="↓">↓</button>
+      <button class="glyph-btn" data-glyph="←">←</button>
+      <button class="glyph-btn" data-glyph="↑">↑</button>
+      <button class="glyph-btn" data-glyph="↔">↔</button>
+      <button class="glyph-btn" data-glyph="↕">↕</button>
+      <button class="glyph-btn" data-glyph="↩">↩</button>
+      <button class="glyph-btn" data-glyph="⤴">⤴</button>
+      <button class="glyph-btn" data-glyph="⤵">⤵</button>
+      <button class="glyph-btn" data-glyph="↯">↯</button>
+      <button class="glyph-btn" data-glyph="⏎">⏎</button>
+    </div>
+
+    <!-- Stars -->
+    <div class="section-title">Stars</div>
+    <div class="grid">
+      <button class="glyph-btn" data-glyph="★">★</button>
+      <button class="glyph-btn" data-glyph="☆">☆</button>
+      <button class="glyph-btn" data-glyph="✶">✶</button>
+      <button class="glyph-btn" data-glyph="✦">✦</button>
+      <button class="glyph-btn" data-glyph="✪">✪</button>
+      <button class="glyph-btn" data-glyph="⍟">⍟</button>
+      <button class="glyph-btn" data-glyph="✣">✣</button>
+      <button class="glyph-btn" data-glyph="✤">✤</button>
+      <button class="glyph-btn" data-glyph="✱">✱</button>
+      <button class="glyph-btn" data-glyph="✲">✲</button>
+      <button class="glyph-btn" data-glyph="✳">✳</button>
+      <button class="glyph-btn" data-glyph="✴">✴</button>
+      <button class="glyph-btn" data-glyph="✷">✷</button>
+      <button class="glyph-btn" data-glyph="✸">✸</button>
+      <button class="glyph-btn" data-glyph="✹">✹</button>
+      <button class="glyph-btn" data-glyph="✺">✺</button>
+      <button class="glyph-btn" data-glyph="✼">✼</button>
+      <button class="glyph-btn" data-glyph="❉">❉</button>
+      <button class="glyph-btn" data-glyph="☀">☀</button>
+    </div>
+
+    <!-- Dots & Circles -->
+    <div class="section-title">Dots & Circles</div>
+    <div class="grid">
+      <button class="glyph-btn" data-glyph="•">•</button>
+      <button class="glyph-btn" data-glyph="·">·</button>
+      <button class="glyph-btn" data-glyph="⋅">⋅</button>
+      <button class="glyph-btn" data-glyph="°">°</button>
+      <button class="glyph-btn" data-glyph="○">○</button>
+      <button class="glyph-btn" data-glyph="☉">☉</button>
+      <button class="glyph-btn" data-glyph="◎">◎</button>
+      <button class="glyph-btn" data-glyph="◉">◉</button>
+      <button class="glyph-btn" data-glyph="◌">◌</button>
+      <button class="glyph-btn" data-glyph="◯">◯</button>
+      <button class="glyph-btn" data-glyph="◦">◦</button>
+    </div>
+
+    <!-- Shapes & Indicators -->
+    <div class="section-title">Shapes & Indicators</div>
+    <div class="grid">
+      <button class="glyph-btn" data-glyph="◆">◆</button>
+      <button class="glyph-btn" data-glyph="◇">◇</button>
+      <button class="glyph-btn" data-glyph="◈">◈</button>
+      <button class="glyph-btn" data-glyph="▲">▲</button>
+      <button class="glyph-btn" data-glyph="▼">▼</button>
+      <button class="glyph-btn" data-glyph="▶">▶</button>
+      <button class="glyph-btn" data-glyph="◀">◀</button>
+      <button class="glyph-btn" data-glyph="▸">▸</button>
+      <button class="glyph-btn" data-glyph="▹">▹</button>
+      <button class="glyph-btn" data-glyph="‣">‣</button>
+    </div>
+
+    <!-- Miscellaneous -->
+    <div class="section-title">Miscellaneous</div>
+    <div class="grid">
+      <button class="glyph-btn" data-glyph="×">×</button>
+      <button class="glyph-btn" data-glyph="©">©</button>
+      <button class="glyph-btn" data-glyph="™">™</button>
+      <button class="glyph-btn" data-glyph="®">®</button>
+      <button class="glyph-btn" data-glyph="℗">℗</button>
+      <button class="glyph-btn" data-glyph="⌘">⌘</button>
+      <button class="glyph-btn" data-glyph="⌥">⌥</button>
+      <button class="glyph-btn" data-glyph="⁂">⁂</button>
+      <button class="glyph-btn" data-glyph="∴">∴</button>
+      <button class="glyph-btn" data-glyph="※">※</button>
+      <button class="glyph-btn" data-glyph="∞">∞</button>
+      <button class="glyph-btn" data-glyph="☰">☰</button>
+      <button class="glyph-btn" data-glyph="⋮">⋮</button>
+      <button class="glyph-btn" data-glyph="⋯">⋯</button>
+      <button class="glyph-btn" data-glyph="ッ">ッ</button>
+      <button class="glyph-btn" data-glyph="ツ">ツ</button>
+      <button class="glyph-btn" data-glyph="◡">◡</button>
+      <button class="glyph-btn" data-glyph="⚭">⚭</button>
+      <button class="glyph-btn" data-glyph="§">§</button>
+      <button class="glyph-btn" data-glyph="¶">¶</button>
+      <button class="glyph-btn" data-glyph="❡">❡</button>
+      <button class="glyph-btn" data-glyph="†">†</button>
+      <button class="glyph-btn" data-glyph="‡">‡</button>
+      <button class="glyph-btn" data-glyph="❢">❢</button>
+      <button class="glyph-btn" data-glyph="✠">✠</button>
+      <button class="glyph-btn" data-glyph="♥">♥</button>
+      <button class="glyph-btn" data-glyph="♦">♦</button>
+      <button class="glyph-btn" data-glyph="♣">♣</button>
+      <button class="glyph-btn" data-glyph="♠">♠</button>
+      <button class="glyph-btn" data-glyph="№">№</button>
+    </div>
+
+    <!-- ASCII Art -->
+    <div class="section-title">ASCII guys</div>
+    <div class="grid-ascii">
+      <button class="glyph-btn" data-glyph="¯\_(ツ)_/¯">¯\_(ツ)_/¯</button>
+      <button class="glyph-btn" data-glyph="(╯°□°)╯︵ ┻━┻">(╯°□°)╯︵ ┻━┻</button>
+      <button class="glyph-btn" data-glyph="ಠ_ಠ">ಠ_ಠ</button>
+      <button class="glyph-btn" data-glyph="ʕ•ᴥ•ʔ">ʕ•ᴥ•ʔ</button>
+    </div>
+
+    <footer>
+      <p style="margin-bottom:.5rem;">Click any glyph to copy</p>
+      <p style="color:#a3a3a3; font-size:.8125rem;">
+        © <script>document.write(new Date().getFullYear())</script>
+        <a href="http://anthonyallen.xyz" target="_blank" style="color:#a3a3a3; text-decoration:none;">Tony Allen</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.glyph-btn');
+    buttons.forEach(btn=>{
+      btn.addEventListener('click', async ()=>{
+        const glyph = btn.dataset.glyph;
+        try{
+          await navigator.clipboard.writeText(glyph);
+          btn.classList.add('copied');
+          setTimeout(()=>btn.classList.remove('copied'), 800);
+        }catch(err){
+          console.error('Failed to copy:', err);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
