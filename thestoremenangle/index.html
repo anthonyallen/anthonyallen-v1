@@ -9,6 +9,9 @@
   <link rel="apple-touch-icon" href="/thestoremenangle/apple-touch-icon.png">
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
   <meta property="og:title" content="The Store Menangle — Since 1904">
   <meta property="og:description" content="Breakfast, lunch, coffee and curated groceries in Menangle, NSW.">
   <meta property="og:image" content="https://anthonyallen.xyz/thestoremenangle/og-image.jpg">
@@ -70,12 +73,13 @@
     }
 
     .header h1 {
+      font-family: "Instrument Serif", serif;
       color: var(--cream);
-      font-weight: 650;
-      font-size: 13px;
-      letter-spacing: 0.26em;
+      font-weight: 400;
+      font-size: 28px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
 
     .header .since {
@@ -84,7 +88,7 @@
       font-size: 11px;
       letter-spacing: 0.32em;
       text-transform: uppercase;
-      margin-bottom: 18px;
+      margin-bottom: 24px;
     }
 
     .header .intro {
@@ -301,31 +305,6 @@
       line-height: 1.8;
     }
 
-    /* ---- GROCERY NOTE ---- */
-
-    .grocery-note {
-      background-color: var(--warm-white);
-      border-top: 1px solid var(--cream-dark);
-    }
-
-    .grocery-inner {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 36px 24px;
-    }
-
-    .grocery-inner p {
-      font-weight: 400;
-      font-size: 14.5px;
-      color: var(--text-light);
-      line-height: 1.65;
-      max-width: 560px;
-    }
-
-    .grocery-inner .section-label {
-      margin-bottom: 14px;
-    }
-
     /* ---- FOOTER PHOTO ---- */
 
     .footer-photo {
@@ -374,6 +353,10 @@
       font-style: italic;
       letter-spacing: 0;
       opacity: 0.75;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+      text-wrap: balance;
     }
 
     .footer .fan-note a {
@@ -408,8 +391,29 @@
       "@context": "https://schema.org",
       "@type": "Restaurant",
       "name": "The Store Menangle",
-      "image": "https://anthonyallen.xyz/thestoremenangle/thestoremenangle.jpg",
-      "description": "Breakfast, lunch, coffee and curated groceries in a heritage building since 1904.",
+      "alternateName": "The Menangle Store",
+      "image": "https://anthonyallen.xyz/thestoremenangle/thestoremenangle.webp",
+      "description": "Breakfast, lunch, coffee and curated groceries in a heritage building since 1904. A beloved community icon in Menangle, NSW.",
+      "url": "https://anthonyallen.xyz/thestoremenangle",
+      "email": "admin@thestoremenangle.com.au",
+      "servesCuisine": ["Australian", "Cafe"],
+      "acceptsReservations": false,
+      "foundingDate": "1904",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "229",
+        "bestRating": "5"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-34.1178",
+        "longitude": "150.7425"
+      },
+      "sameAs": [
+        "https://instagram.com/thestoremenangle",
+        "https://www.facebook.com/p/The-Store-Menangle-100056081264621/"
+      ],
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -466,7 +470,7 @@
       </svg>
       <h1>The Store Menangle</h1>
       <p class="since">Since 1904</p>
-      <p class="intro">The Store is a beloved community icon in Menangle, NSW. A cafe with the best food and coffee in the area and they don't have a website. So <a href="https://anthonyallen.xyz">I made this unofficial one</a>. Confusingly, the internet knows it as both 'The Menangle Store' and 'The Store Menangle' 🤷</p>
+      <p class="intro">The Store is a beloved community icon in Menangle, NSW. A cafe with the best food and coffee around and no website. So <a href="https://anthonyallen.xyz">I made this unofficial one</a>.</p>
     </div>
   </header>
 
@@ -772,14 +776,6 @@
 
   </div>
 
-  <!-- GROCERY NOTE -->
-  <div class="grocery-note">
-    <div class="grocery-inner">
-      <div class="section-label">The General Store</div>
-      <p>Beyond the cafe, The Store stocks a curated selection of premium groceries and local products. Artisan pasta, sauces, coffee beans, spreads, condiments, BBQ sauces, anchovies, and more, all carefully sourced. A good spot for gifts or stocking up on things you won't find at Woolies.</p>
-    </div>
-  </div>
-
   <!-- FOOTER PHOTO -->
   <div class="footer-photo">
     <img src="/thestoremenangle/thestoremenangle.webp" alt="The Store Menangle, a heritage building on Station Street, Menangle, built in 1904." loading="lazy" width="1600" height="1066">
@@ -795,8 +791,10 @@
       <a href="mailto:admin@thestoremenangle.com.au">admin@thestoremenangle.com.au</a>
       &nbsp;·&nbsp;
       <a href="https://instagram.com/thestoremenangle" target="_blank" rel="noopener">Instagram</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.facebook.com/p/The-Store-Menangle-100056081264621/" target="_blank" rel="noopener">Facebook</a>
     </p>
-    <p class="fan-note">This page is not affiliated with or endorsed by The Store Menangle. Made by <a href="https://anthonyallen.xyz">Anthony Allen</a>.</p>
+    <p class="fan-note">This page is not affiliated with or endorsed by The Store Menangle. Confusingly, the internet knows it as both 'The Menangle Store' and 'The Store Menangle' 🤷 Site by <a href="https://anthonyallen.xyz">Anthony Allen</a>.</p>
   </footer>
 
   <!-- Highlight today's hours -->
