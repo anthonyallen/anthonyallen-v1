@@ -32,7 +32,7 @@
       --t-primary:  #EEE4DE;   /* warm parchment-ivory — 12:1 contrast */
       --t-body:     #C2ADB4;   /* neutral warm-grey, rose undertone — 7.2:1 */
       --t-muted:    #A0878E;   /* same hue as bg, harmonious label — 4.7:1 */
-      --t-dim:      #6E5760;   /* structural/decorative only */
+      --t-dim:      #907880;   /* structural/decorative — legible midtone */
       --price:      #BEAEBA;   /* slightly cooler for distinction */
       --border:     rgba(238, 228, 222, 0.09);
       --border-med: rgba(238, 228, 222, 0.16);
@@ -177,19 +177,11 @@
     .find-us-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 48px;
     }
 
     .info-col {
-      padding: 36px 40px 36px 0;
-    }
-
-    .info-col + .info-col {
-      padding-left: 40px;
-      border-left: 1px solid var(--border);
-    }
-
-    .info-col:last-child {
-      padding-right: 0;
+      padding: 36px 0;
     }
 
     .info-block {
@@ -251,7 +243,6 @@
 
     .hours-row {
       display: flex;
-      justify-content: space-between;
       gap: 16px;
       font-size: 14px;
       color: var(--t-muted);
@@ -365,25 +356,24 @@
 
     .site-footer {
       border-top: 1px solid var(--border);
+      padding-bottom: 72px;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 3fr;
-      min-height: 440px;
-    }
-
-    .footer-info {
-      padding: 52px 48px 48px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      gap: 20px;
+    .footer-img {
+      display: block;
+      width: calc(100% + 40px);
+      margin: 56px 0 40px -20px;
+      height: 380px;
+      object-fit: cover;
+      object-position: center 22%;
+      border-radius: 8px;
+      filter: brightness(0.85) saturate(0.88);
     }
 
     .footer-contact {
       display: flex;
       flex-direction: column;
+      margin-bottom: 24px;
     }
 
     .footer-contact a {
@@ -414,21 +404,6 @@
       border-bottom-color: transparent;
     }
 
-    .footer-img-col {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .footer-img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 22%;
-      filter: brightness(0.52) saturate(0.68) contrast(1.06);
-    }
-
     /* ---- RESPONSIVE ---- */
 
     @media (max-width: 580px) {
@@ -446,35 +421,16 @@
 
       .info-col {
         padding: 24px 0;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .info-col + .info-col {
-        border-left: none;
-        padding-left: 0;
-      }
-
-      .info-col:last-child {
-        padding-right: 0;
-        border-bottom: none;
       }
 
       .extras-grid {
         grid-template-columns: 1fr 1fr;
       }
 
-      .footer-grid {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
-
-      .footer-img-col {
-        height: 300px;
-      }
-
-      .footer-info {
-        padding: 40px 28px 44px;
-        justify-content: flex-start;
+      .footer-img {
+        width: calc(100% + 24px);
+        margin-left: -12px;
+        height: 260px;
       }
     }
   </style>
@@ -808,31 +764,24 @@
   </main>
 
   <footer class="site-footer">
-    <div class="footer-grid">
-
-      <div class="footer-info">
-        <div class="footer-contact">
-          <a href="https://share.google/nB0n1uiCns1uiPZvu" target="_blank" rel="noopener">2 Station St, Menangle NSW 2568</a>
-          <a href="tel:0246338101">(02) 4633 8101</a>
-          <a href="mailto:admin@thestoremenangle.com.au">admin@thestoremenangle.com.au</a>
-          <a href="https://instagram.com/thestoremenangle" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://www.facebook.com/p/The-Store-Menangle-100056081264621/" target="_blank" rel="noopener">Facebook</a>
-        </div>
-        <p class="footer-disclaimer">This page is not affiliated with or endorsed by The Store Menangle. Also, the internet knows the caf&eacute; as both &lsquo;The Menangle Store&rsquo; and &lsquo;The Store Menangle&rsquo; so 🤷</p>
-        <p class="footer-disclaimer">Site by <a href="https://anthonyallen.xyz">Anthony Allen</a>.</p>
+    <div class="wrap">
+      <img
+        class="footer-img"
+        src="/thestoremenangle/thestoremenangle.webp"
+        alt="The Store Menangle, a heritage building on Station Street, Menangle, built in 1904."
+        loading="lazy"
+        width="1600"
+        height="1066"
+      >
+      <div class="footer-contact">
+        <a href="https://share.google/nB0n1uiCns1uiPZvu" target="_blank" rel="noopener">2 Station St, Menangle NSW 2568</a>
+        <a href="tel:0246338101">(02) 4633 8101</a>
+        <a href="mailto:admin@thestoremenangle.com.au">admin@thestoremenangle.com.au</a>
+        <a href="https://instagram.com/thestoremenangle" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/p/The-Store-Menangle-100056081264621/" target="_blank" rel="noopener">Facebook</a>
       </div>
-
-      <div class="footer-img-col">
-        <img
-          class="footer-img"
-          src="/thestoremenangle/thestoremenangle.webp"
-          alt="The Store Menangle, a heritage building on Station Street, Menangle, built in 1904."
-          loading="lazy"
-          width="1600"
-          height="1066"
-        >
-      </div>
-
+      <p class="footer-disclaimer">This page is not affiliated with or endorsed by The Store Menangle. Also, the internet knows the caf&eacute; as both &lsquo;The Menangle Store&rsquo; and &lsquo;The Store Menangle&rsquo; so 🤷</p>
+      <p class="footer-disclaimer">Site by <a href="https://anthonyallen.xyz">Anthony Allen</a>.</p>
     </div>
   </footer>
 
