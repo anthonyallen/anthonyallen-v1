@@ -176,16 +176,20 @@
 
     .find-us-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
     }
 
     .info-col {
       padding: 36px 40px 36px 0;
     }
 
-    .info-col:last-child {
-      padding: 36px 0 36px 40px;
+    .info-col + .info-col {
+      padding-left: 40px;
       border-left: 1px solid var(--border);
+    }
+
+    .info-col:last-child {
+      padding-right: 0;
     }
 
     .info-block {
@@ -360,74 +364,69 @@
     /* ---- FOOTER ---- */
 
     .site-footer {
-      position: relative;
-      overflow: hidden;
+      border-top: 1px solid var(--border);
     }
 
-    .footer-img {
-      display: block;
-      width: 100%;
-      height: 540px;
-      object-fit: cover;
-      object-position: center 28%;
-      filter: brightness(0.46) saturate(0.65) contrast(1.08);
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      min-height: 440px;
     }
 
-    .footer-scrim {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        180deg,
-        transparent            0%,
-        transparent            15%,
-        rgba(58, 29, 36, 0.45) 45%,
-        rgba(58, 29, 36, 0.92) 75%,
-        rgba(58, 29, 36, 1)    100%
-      );
-      pointer-events: none;
-    }
-
-    .footer-content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding-bottom: 48px;
-    }
-
-    .footer-links {
+    .footer-info {
+      padding: 52px 48px 48px;
       display: flex;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 20px;
     }
 
-    .footer-links a {
-      font-size: 12.5px;
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-contact a {
+      font-size: 13px;
       color: var(--t-muted);
       border-bottom-color: transparent;
-      margin-right: 20px;
-      line-height: 2.2;
+      line-height: 2.1;
     }
 
-    .footer-links a:hover {
+    .footer-contact a:hover {
       color: var(--t-body);
       border-bottom-color: transparent;
     }
 
     .footer-disclaimer {
       font-size: 11px;
-      color: var(--t-muted);
+      color: var(--t-dim);
       line-height: 1.8;
     }
 
     .footer-disclaimer a {
-      color: var(--t-muted);
+      color: var(--t-dim);
       border-bottom-color: transparent;
     }
 
     .footer-disclaimer a:hover {
-      color: var(--t-body);
+      color: var(--t-muted);
       border-bottom-color: transparent;
+    }
+
+    .footer-img-col {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+      filter: brightness(0.52) saturate(0.68) contrast(1.06);
     }
 
     /* ---- RESPONSIVE ---- */
@@ -446,13 +445,17 @@
       }
 
       .info-col {
-        padding: 28px 0;
+        padding: 24px 0;
         border-bottom: 1px solid var(--border);
       }
 
-      .info-col:last-child {
-        padding: 28px 0;
+      .info-col + .info-col {
         border-left: none;
+        padding-left: 0;
+      }
+
+      .info-col:last-child {
+        padding-right: 0;
         border-bottom: none;
       }
 
@@ -460,8 +463,18 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .footer-img {
-        height: 420px;
+      .footer-grid {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .footer-img-col {
+        height: 300px;
+      }
+
+      .footer-info {
+        padding: 40px 28px 44px;
+        justify-content: flex-start;
       }
     }
   </style>
@@ -537,14 +550,15 @@
         <div class="find-us-grid">
 
           <div class="info-col">
-
             <div class="info-block">
               <span class="section-label">Location</span>
               <div class="info-value">
                 <a href="https://share.google/nB0n1uiCns1uiPZvu" target="_blank" rel="noopener">2 Station St<br>Menangle NSW 2568</a>
               </div>
             </div>
+          </div>
 
+          <div class="info-col">
             <div class="info-block hours-container" id="hours-container">
               <div class="hours-label-row">
                 <span class="status-dot"></span>
@@ -561,33 +575,15 @@
                 </div>
               </div>
             </div>
-
           </div>
 
           <div class="info-col">
-
-            <div class="info-block">
-              <span class="section-label">Phone</span>
-              <div class="info-value">
-                <a href="tel:0246338101">(02) 4633 8101</a>
-              </div>
-            </div>
-
-            <div class="info-block">
-              <span class="section-label">Follow</span>
-              <div class="info-value">
-                <a href="https://instagram.com/thestoremenangle" target="_blank" rel="noopener">Instagram</a><br>
-                <a href="https://www.facebook.com/p/The-Store-Menangle-100056081264621/" target="_blank" rel="noopener">Facebook</a>
-              </div>
-            </div>
-
             <div class="info-block">
               <span class="section-label">Google Reviews</span>
               <div class="info-value">
                 <a href="https://share.google/nB0n1uiCns1uiPZvu" target="_blank" rel="noopener">&#9733;&thinsp;4.7 &middot; 230+ reviews</a>
               </div>
             </div>
-
           </div>
 
         </div>
@@ -812,18 +808,10 @@
   </main>
 
   <footer class="site-footer">
-    <img
-      class="footer-img"
-      src="/thestoremenangle/thestoremenangle.webp"
-      alt="The Store Menangle, a heritage building on Station Street, Menangle, built in 1904."
-      loading="lazy"
-      width="1600"
-      height="1066"
-    >
-    <div class="footer-scrim"></div>
-    <div class="footer-content">
-      <div class="wrap">
-        <div class="footer-links">
+    <div class="footer-grid">
+
+      <div class="footer-info">
+        <div class="footer-contact">
           <a href="https://share.google/nB0n1uiCns1uiPZvu" target="_blank" rel="noopener">2 Station St, Menangle NSW 2568</a>
           <a href="tel:0246338101">(02) 4633 8101</a>
           <a href="mailto:admin@thestoremenangle.com.au">admin@thestoremenangle.com.au</a>
@@ -833,6 +821,18 @@
         <p class="footer-disclaimer">This page is not affiliated with or endorsed by The Store Menangle. Also, the internet knows the caf&eacute; as both &lsquo;The Menangle Store&rsquo; and &lsquo;The Store Menangle&rsquo; so 🤷</p>
         <p class="footer-disclaimer">Site by <a href="https://anthonyallen.xyz">Anthony Allen</a>.</p>
       </div>
+
+      <div class="footer-img-col">
+        <img
+          class="footer-img"
+          src="/thestoremenangle/thestoremenangle.webp"
+          alt="The Store Menangle, a heritage building on Station Street, Menangle, built in 1904."
+          loading="lazy"
+          width="1600"
+          height="1066"
+        >
+      </div>
+
     </div>
   </footer>
 
