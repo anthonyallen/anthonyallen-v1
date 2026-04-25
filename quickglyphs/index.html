@@ -156,6 +156,7 @@
       width:1em;
       text-align:center;
       font-variant-numeric:tabular-nums;
+      transition:opacity 25ms ease;
     }
 
     .section-title{
@@ -582,15 +583,30 @@
         for(let i = 0; i < count; i++){
           seq.push(STAR_POOL[Math.floor(Math.random() * STAR_POOL.length)]);
         }
+        // Decelerate: each step lingers longer, last glyph holds before snap-back.
+        // Feels like a slot machine slowing to a landing.
+        const holds = seq.map((_, i) =>
+          i === seq.length - 1 ? 300 : 65 + i * 35
+        ); // e.g. 65, 100, 135, 170 → hold 300ms
         let i = 0;
-        const step = setInterval(() => {
+        function next(){
           if(i < seq.length){
-            heroStar.textContent = seq[i++];
+            const char = seq[i];
+            const hold = holds[i];
+            i++;
+            // Subtle opacity flicker on each swap — feels mechanical, not just text changing
+            heroStar.style.opacity = '0.1';
+            setTimeout(() => {
+              heroStar.textContent = char;
+              heroStar.style.opacity = '1';
+              setTimeout(next, hold);
+            }, 30);
           } else {
+            // Snap cleanly back to default — no flicker on the return
             heroStar.textContent = STAR_DEFAULT;
-            clearInterval(step);
           }
-        }, 90);
+        }
+        next();
       }
       function schedule(){
         const delay = 3000 + Math.random() * 1000; // every ~3–4s
