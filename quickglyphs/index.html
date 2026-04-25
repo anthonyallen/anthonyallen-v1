@@ -344,7 +344,11 @@
       <button class="glyph-btn" data-glyph="↑">↑</button>
       <button class="glyph-btn" data-glyph="↔">↔</button>
       <button class="glyph-btn" data-glyph="↕">↕</button>
+      <button class="glyph-btn" data-glyph="↖">↖</button>
+      <button class="glyph-btn" data-glyph="↙">↙</button>
+      <button class="glyph-btn" data-glyph="↘">↘</button>
       <button class="glyph-btn" data-glyph="↩">↩</button>
+      <button class="glyph-btn" data-glyph="↪">↪</button>
       <button class="glyph-btn" data-glyph="↯">↯</button>
       <button class="glyph-btn" data-glyph="⏎">⏎</button>
     </div>
@@ -428,7 +432,11 @@
       <button class="glyph-btn" data-glyph="⬢">⬢</button>
       <button class="glyph-btn" data-glyph="⬡">⬡</button>
       <button class="glyph-btn" data-glyph="⬣">⬣</button>
-      <button class="glyph-btn" data-glyph="❖">❖</button>
+      <button class="glyph-btn" data-glyph="‹">‹</button>
+      <button class="glyph-btn" data-glyph="›">›</button>
+      <button class="glyph-btn" data-glyph="«">«</button>
+      <button class="glyph-btn" data-glyph="»">»</button>
+      <button class="glyph-btn" data-glyph="¦">¦</button>
     </div>
 
     <!-- ASCII Art -->
@@ -436,8 +444,11 @@
     <div class="grid-ascii">
       <button class="glyph-btn" data-glyph="¯\_(ツ)_/¯">¯\_(ツ)_/¯</button>
       <button class="glyph-btn" data-glyph="(╯°□°)╯︵ ┻━┻">(╯°□°)╯︵ ┻━┻</button>
+      <button class="glyph-btn" data-glyph="┬─┬ ノ( ゜-゜ノ)">┬─┬ ノ( ゜-゜ノ)</button>
       <button class="glyph-btn" data-glyph="ಠ_ಠ">ಠ_ಠ</button>
       <button class="glyph-btn" data-glyph="ʕ•ᴥ•ʔ">ʕ•ᴥ•ʔ</button>
+      <button class="glyph-btn" data-glyph="( ͡° ͜ʖ ͡°)">( ͡° ͜ʖ ͡°)</button>
+      <button class="glyph-btn" data-glyph="(☞ﾟヮﾟ)☞">(☞ﾟヮﾟ)☞</button>
     </div>
 
     <footer>
@@ -453,6 +464,7 @@
     // Unicode name map for curated glyphs. Fallback to generic message when absent.
     const NAMES = {
       '→':'Rightwards Arrow','↗':'North East Arrow','↓':'Downwards Arrow','←':'Leftwards Arrow','↑':'Upwards Arrow',
+      '↖':'North West Arrow','↙':'South West Arrow','↘':'South East Arrow','↪':'Rightwards Arrow with Hook',
       '↔':'Left Right Arrow','↕':'Up Down Arrow','↩':'Leftwards Arrow with Hook','↯':'Downwards Zigzag Arrow','⏎':'Return Symbol',
       '★':'Black Star','☆':'White Star','✶':'Six Pointed Black Star','✦':'Black Four Pointed Star','✪':'Circled White Star',
       '⍟':'APL Functional Symbol Circle Star','✣':'Four Balloon-Spoked Asterisk','✤':'Heavy Four Balloon-Spoked Asterisk',
@@ -470,8 +482,11 @@
       '⚭':'Marriage Symbol','§':'Section Sign','¶':'Pilcrow Sign','❡':'Curved Stem Paragraph Sign Ornament',
       '†':'Dagger','‡':'Double Dagger','❢':'Heavy Exclamation Mark Ornament','✠':'Maltese Cross','№':'Numero Sign',
       '∿':'Sine Wave','≋':'Triple Tilde','⬢':'Black Hexagon','⬡':'White Hexagon','⬣':'Horizontal Black Hexagon',
-      '❖':'Black Diamond Minus White X',
-      '¯\\_(ツ)_/¯':'Shrug','(╯°□°)╯︵ ┻━┻':'Table Flip','ಠ_ಠ':'Look of Disapproval','ʕ•ᴥ•ʔ':'Bear'
+      '‹':'Single Left-Pointing Angle Quotation Mark','›':'Single Right-Pointing Angle Quotation Mark',
+      '«':'Left-Pointing Double Angle Quotation Mark','»':'Right-Pointing Double Angle Quotation Mark',
+      '¦':'Broken Bar',
+      '¯\\_(ツ)_/¯':'Shrug','(╯°□°)╯︵ ┻━┻':'Table Flip','┬─┬ ノ( ゜-゜ノ)':'Table Restore',
+      'ಠ_ಠ':'Look of Disapproval','ʕ•ᴥ•ʔ':'Bear','( ͡° ͜ʖ ͡°)':'Lenny Face','(☞ﾟヮﾟ)☞':'Finger Guns'
     };
 
     function codePoint(g){
