@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Store Menangle Menu & Prices — Café in Menangle NSW</title>
-  <meta name="description" content="Full menu and prices for The Store Menangle café in Menangle, NSW. Breakfast, lunch, burgers, coffee — served daily from 7am in a heritage 1904 building.">
+  <meta name="description" content="Full menu and prices for The Store Menangle — café, boutique grocer and post office in a 1904 heritage building, Menangle NSW. Open from 6:30am Monday.">
   <meta name="theme-color" content="#3A1D24">
   <link rel="icon" type="image/png" href="/thestoremenangle/favicon.png">
   <link rel="apple-touch-icon" href="/thestoremenangle/apple-touch-icon.png">
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="preload" href="/thestoremenangle/fonts/LibreCaslonCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <meta property="og:title" content="The Store Menangle Menu & Prices — Café in Menangle NSW">
-  <meta property="og:description" content="Full menu and prices for The Store Menangle café in Menangle, NSW. Breakfast, lunch, burgers, coffee — served daily from 7am in a heritage 1904 building.">
+  <meta property="og:description" content="Full menu and prices for The Store Menangle — café, boutique grocer and post office in a 1904 heritage building, Menangle NSW. Open from 6:30am Monday.">
   <meta property="og:site_name" content="The Store Menangle">
   <meta property="og:image" content="https://anthonyallen.xyz/thestoremenangle/og-image.jpg">
   <meta property="og:url" content="https://anthonyallen.xyz/thestoremenangle/">
@@ -326,9 +326,9 @@
     .menu-heading {
       font-family: "Libre Caslon Condensed", "Instrument Serif", serif;
       font-weight: 400;
-      font-size: 21px;
-      letter-spacing: 0.36em;
-      text-indent: 0.36em;
+      font-size: 26px;
+      letter-spacing: 0.32em;
+      text-indent: 0.32em;
       text-transform: uppercase;
       color: var(--t-primary);
       margin-bottom: 56px;
@@ -336,7 +336,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 18px;
+      gap: 20px;
     }
 
     .menu-heading::before,
@@ -668,25 +668,27 @@
       margin: 0;
     }
 
+    /* Photo credit sits below the image, right-aligned, no pill background. */
     .photo-credit {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
+      margin-top: 10px;
       font-size: 10px;
-      color: rgba(255, 255, 255, 0.82);
-      background: rgba(0, 0, 0, 0.28);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      padding: 4px 10px;
-      border-radius: 999px;
-      letter-spacing: 0.02em;
+      color: var(--t-dim);
+      letter-spacing: 0.04em;
+      text-align: right;
     }
 
-    /* Mirrors the photo-credit pill, in the opposite (top-left) corner. */
+    .photo-credit a {
+      color: var(--t-dim);
+    }
+
+    .photo-credit a:hover {
+      color: var(--t-muted);
+    }
+
     .hero-rating {
       position: absolute;
-      top: 20px;
-      left: 20px;
+      top: 10px;
+      left: 10px;
       display: inline-flex;
       align-items: center;
       gap: 5px;
@@ -769,10 +771,10 @@
       }
 
       .menu-heading {
-        font-size: 19px;
-        letter-spacing: 0.32em;
-        text-indent: 0.32em;
-        gap: 14px;
+        font-size: 22px;
+        letter-spacing: 0.28em;
+        text-indent: 0.28em;
+        gap: 16px;
       }
 
       .menu-heading::before,
@@ -961,18 +963,10 @@
         },
         {
           "@type": "Question",
-          "name": "What coffee and bread does The Store Menangle serve?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Mecca coffee, Sonoma bread and pastries, Cedar Creek Cider, and a regular rotation of local produce."
-          }
-        },
-        {
-          "@type": "Question",
           "name": "Does The Store Menangle sell groceries?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Alongside the café menu, The Store sells Sonoma bread and pastries, jams, pickles, cold meats, fresh flowers, Cedar Creek Cider, and a regular rotation of local produce and pantry staples."
+            "text": "Yes. Alongside the café menu, The Store sells fresh bread and pastries, jams, pickles, cold meats, fresh flowers, cider, and a regular rotation of local produce and pantry staples."
           }
         },
         {
@@ -1075,8 +1069,8 @@
         <a class="hero-rating" href="https://share.google/nB0n1uiCns1uiPZvu" target="_blank" rel="noopener">
           <span class="hero-rating-star">&#9733;</span><span class="hero-rating-text">4.7&thinsp;&middot;&thinsp;244+ Google reviews</span>
         </a>
-        <p class="photo-credit">Photo: <a href="https://www.facebook.com/gurphotos/" target="_blank" rel="noopener">Outkast Media</a></p>
       </div>
+      <p class="photo-credit">Photo: <a href="https://www.facebook.com/gurphotos/" target="_blank" rel="noopener">Outkast Media</a></p>
 
       <p class="intro">A caf&eacute; and grocer in a 1904 heritage building in the village of Menangle. They don&rsquo;t have a website, so <a href="https://anthonyallen.xyz">I made one</a>. Menu and details sourced from their Google Maps listing.</p>
 
@@ -1320,6 +1314,16 @@
 
           <details class="faq-item">
             <summary>
+              <span class="faq-q">Where is it?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a-wrap"><div class="faq-a">
+              <p>2 Station Street, Menangle NSW 2568, in the village of Menangle in Wollondilly Shire, south-west of Sydney.</p>
+            </div></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
               <span class="faq-q">Is it in a heritage building?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </summary>
@@ -1330,21 +1334,11 @@
 
           <details class="faq-item">
             <summary>
-              <span class="faq-q">What coffee and bread do they serve?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </summary>
-            <div class="faq-a-wrap"><div class="faq-a">
-              <p>Mecca coffee, Sonoma bread and pastries, Cedar Creek Cider, and a regular rotation of local produce.</p>
-            </div></div>
-          </details>
-
-          <details class="faq-item">
-            <summary>
               <span class="faq-q">Do they sell groceries?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </summary>
             <div class="faq-a-wrap"><div class="faq-a">
-              <p>Yes. Alongside the caf&eacute; menu you&rsquo;ll find Sonoma bread and pastries, jams, pickles, cold meats, fresh flowers, Cedar Creek Cider, and a regular rotation of local produce and pantry staples.</p>
+              <p>Yes. Alongside the caf&eacute; menu you&rsquo;ll find fresh bread and pastries, jams, pickles, cold meats, fresh flowers, cider, and a regular rotation of local produce and pantry staples.</p>
             </div></div>
           </details>
 
