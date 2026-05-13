@@ -3,23 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Store Menangle — Café Menu · Menangle NSW</title>
-  <meta name="description" content="An unofficial fan page for The Store Menangle café. Breakfast, lunch, coffee and curated groceries in a heritage building since 1904, Menangle NSW.">
+  <title>The Store Menangle Menu & Prices — Café in Menangle NSW</title>
+  <meta name="description" content="Full menu and prices for The Store Menangle café in Menangle, NSW. Breakfast, lunch, burgers, coffee — served daily from 7am in a heritage 1904 building.">
   <meta name="theme-color" content="#3A1D24">
   <link rel="icon" type="image/png" href="/thestoremenangle/favicon.png">
   <link rel="apple-touch-icon" href="/thestoremenangle/apple-touch-icon.png">
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
-  <meta property="og:title" content="The Store Menangle — Café &amp; Menu, Menangle NSW">
-  <meta property="og:description" content="Breakfast, lunch, coffee and curated groceries in Menangle, NSW.">
+  <link rel="preload" href="/thestoremenangle/fonts/LibreCaslonCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <meta property="og:title" content="The Store Menangle Menu & Prices — Café in Menangle NSW">
+  <meta property="og:description" content="Full menu and prices for The Store Menangle café in Menangle, NSW. Breakfast, lunch, burgers, coffee — served daily from 7am in a heritage 1904 building.">
+  <meta property="og:site_name" content="The Store Menangle">
   <meta property="og:image" content="https://anthonyallen.xyz/thestoremenangle/og-image.jpg">
   <meta property="og:url" content="https://anthonyallen.xyz/thestoremenangle/">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://anthonyallen.xyz/thestoremenangle/">
   <style>
+    @font-face {
+      font-family: "Libre Caslon Condensed";
+      src: url("/thestoremenangle/fonts/LibreCaslonCondensed-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
       font-family: Inter, sans-serif;
       font-feature-settings: 'liga' 1, 'calt' 1;
@@ -138,11 +145,11 @@
     }
 
     .site-title {
-      font-family: "Instrument Serif", serif;
+      font-family: "Libre Caslon Condensed", "Instrument Serif", serif;
       font-weight: 400;
-      font-size: 30px;
-      letter-spacing: 0.18em;
-      text-indent: 0.18em; /* optical centring — recoup the trailing tracking */
+      font-size: 36px;
+      letter-spacing: 0.16em;
+      text-indent: 0.16em; /* optical centring — recoup the trailing tracking */
       text-transform: uppercase;
       color: var(--t-primary);
       line-height: 1.15;
@@ -283,11 +290,11 @@
     /* ---- MENU HEADING ---- */
 
     .menu-heading {
-      font-family: "Instrument Serif", serif;
+      font-family: "Libre Caslon Condensed", "Instrument Serif", serif;
       font-weight: 400;
-      font-size: 18px;
-      letter-spacing: 0.4em;
-      text-indent: 0.4em;
+      font-size: 21px;
+      letter-spacing: 0.36em;
+      text-indent: 0.36em;
       text-transform: uppercase;
       color: var(--t-primary);
       margin-bottom: 56px;
@@ -442,6 +449,40 @@
       line-height: 2;
     }
 
+    /* ---- FAQ ---- */
+
+    .faq {
+      margin-top: 80px;
+      padding-top: 56px;
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-item {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-item h3 {
+      font-family: "Libre Caslon Condensed", "Instrument Serif", serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 0.005em;
+      color: var(--t-primary);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .faq-item p {
+      font-size: 13.5px;
+      color: var(--t-body);
+      line-height: 1.7;
+      max-width: 60ch;
+    }
+
     /* ---- FOOTER ---- */
 
     .site-footer {
@@ -482,16 +523,16 @@
       border-bottom-color: transparent;
     }
 
-    .footer-img-wrap {
+    .hero-img-wrap {
       position: relative;
-      margin: 64px 0 44px -40px;
-      width: calc(100% + 80px);
+      margin: 40px -28px 0;
+      animation: fadeUp 0.65s 0.24s ease both;
     }
 
-    .footer-img {
+    .hero-img {
       display: block;
       width: 100%;
-      height: 380px;
+      height: 320px;
       object-fit: cover;
       object-position: center 22%;
       border-radius: 2px;
@@ -531,9 +572,9 @@
       }
 
       .site-title {
-        font-size: 22px;
-        letter-spacing: 0.16em;
-        text-indent: 0.16em;
+        font-size: 26px;
+        letter-spacing: 0.14em;
+        text-indent: 0.14em;
       }
 
       .since {
@@ -565,9 +606,9 @@
       }
 
       .menu-heading {
-        font-size: 16px;
-        letter-spacing: 0.36em;
-        text-indent: 0.36em;
+        font-size: 19px;
+        letter-spacing: 0.32em;
+        text-indent: 0.32em;
         gap: 14px;
       }
 
@@ -581,40 +622,75 @@
         padding-bottom: 64px;
       }
 
-      .footer-img-wrap {
-        width: calc(100% + 24px);
-        margin-top: 40px;
-        margin-left: -12px;
+      .hero-img-wrap {
+        margin: 28px -22px 0;
       }
 
-      .footer-img {
-        height: 260px;
+      .hero-img {
+        height: 220px;
+      }
+
+      .faq {
+        margin-top: 56px;
+        padding-top: 40px;
+      }
+
+      .faq-item h3 {
+        font-size: 20px;
       }
     }
   </style>
   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://anthonyallen.xyz/thestoremenangle/#website",
+      "name": "The Store Menangle — Unofficial Menu",
+      "url": "https://anthonyallen.xyz/thestoremenangle/",
+      "inLanguage": "en-AU"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://anthonyallen.xyz/thestoremenangle/#webpage",
+      "url": "https://anthonyallen.xyz/thestoremenangle/",
+      "name": "The Store Menangle Menu & Prices",
+      "description": "Full menu and prices for The Store Menangle café in Menangle, NSW.",
+      "isPartOf": { "@id": "https://anthonyallen.xyz/thestoremenangle/#website" },
+      "about": { "@id": "https://anthonyallen.xyz/thestoremenangle/#restaurant" },
+      "creator": {
+        "@type": "Person",
+        "name": "Anthony Allen",
+        "url": "https://anthonyallen.xyz"
+      },
+      "isBasedOn": "https://share.google/nB0n1uiCns1uiPZvu",
+      "dateModified": "2026-05-13"
+    },
+    {
       "@type": "Restaurant",
+      "@id": "https://anthonyallen.xyz/thestoremenangle/#restaurant",
       "name": "The Store Menangle",
       "alternateName": "The Menangle Store",
       "image": "https://anthonyallen.xyz/thestoremenangle/thestoremenangle.webp",
       "description": "Breakfast, lunch, coffee and curated groceries in a heritage building since 1904.",
       "url": "https://anthonyallen.xyz/thestoremenangle/",
-      "email": "admin@thestoremenangle.com.au",
       "servesCuisine": ["Australian", "Cafe"],
       "acceptsReservations": false,
       "foundingDate": "1904",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.7",
-        "reviewCount": "244",
-        "bestRating": "5"
-      },
+      "priceRange": "$$",
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": "-34.1178",
         "longitude": "150.7425"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2 Station St",
+        "addressLocality": "Menangle",
+        "addressRegion": "NSW",
+        "postalCode": "2568",
+        "addressCountry": "AU"
       },
       "sameAs": [
         "https://instagram.com/thestoremenangle",
@@ -634,17 +710,111 @@
           "closes": "14:00"
         }
       ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "2 Station St",
-        "addressLocality": "Menangle",
-        "addressRegion": "NSW",
-        "postalCode": "2568",
-        "addressCountry": "AU"
-      },
-      "telephone": "+61246338101",
-      "priceRange": "$$"
+      "hasMenu": { "@id": "https://anthonyallen.xyz/thestoremenangle/#menu" }
+    },
+    {
+      "@type": "Menu",
+      "@id": "https://anthonyallen.xyz/thestoremenangle/#menu",
+      "name": "The Store Menangle Menu",
+      "inLanguage": "en-AU",
+      "hasMenuSection": [
+        {
+          "@type": "MenuSection",
+          "name": "Breakfast",
+          "hasMenuItem": [
+            { "@type": "MenuItem", "name": "Eggs Benny", "description": "Two free-range eggs, spinach & Hollandaise sauce on a toasted Sonoma croissant. Bacon +$6 · Salmon +$7 · Roasted Mushrooms +$5", "offers": { "@type": "Offer", "price": "22.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Zucchini Nest", "description": "Toasted sourdough topped with seasoned ricotta, shaved zucchini, crushed toasted almonds, hemp seeds, fresh basil pesto & soft poached free-range egg.", "offers": { "@type": "Offer", "price": "23.50", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Persian Eggs", "description": "Two poached free-range eggs on a bed of herbed yoghurt, topped with an aromatic chilli butter, fresh herbs & toasted sourdough. Add Chorizo +$6", "offers": { "@type": "Offer", "price": "22.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Tomato Harvest", "description": "Melody of tomatoes, smashed avocado, olive oil, fresh herbs topped on sourdough with herb oil.", "offers": { "@type": "Offer", "price": "24.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Brisket & Hash", "description": "Rosemary roasted potatoes, English spinach, 16hr house smoked brisket, poached free-range egg, sweet potato shavings & smoked Hollandaise sauce.", "offers": { "@type": "Offer", "price": "26.50", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Dirty Breakfast Sandwich", "description": "Free-range egg, pork sausage, bacon, hashbrown, American cheddar, rocket & Kielty's BBQ sauce on a Turkish roll.", "offers": { "@type": "Offer", "price": "22.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Breakfast Burger", "description": "Bacon, free-range egg, Kewpie mayo, cheese, rocket & smokey tomato relish on a milk bun.", "offers": { "@type": "Offer", "price": "15.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Halloumi Burger", "description": "Halloumi, grilled capsicum & zucchini, Kewpie mayo, rocket & beetroot relish on a milk bun.", "offers": { "@type": "Offer", "price": "15.50", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Classic Eggs on Toast", "description": "Poached, fried or scrambled free-range eggs on sourdough. Add Bacon +$6 · Hashbrown +$3", "offers": { "@type": "Offer", "price": "14.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Sourdough Toast", "description": "Served with Pepe Saya butter & choice of Vegemite, jam, honey or peanut butter.", "offers": { "@type": "Offer", "price": "8.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Sonoma Fruit Toast", "description": "With lemon mascarpone & honey.", "offers": { "@type": "Offer", "price": "12.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Banana Bread", "description": "Thick sliced, toasted & served with Pepe Saya butter.", "offers": { "@type": "Offer", "price": "9.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Toasties", "description": "Ham, Swiss cheese & Dijon · Tomato, cheese & fresh basil · Herb, mushroom & goat's cheese.", "offers": { "@type": "Offer", "price": "12.50", "priceCurrency": "AUD" } }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Lunch",
+          "hasMenuItem": [
+            { "@type": "MenuItem", "name": "Fresh Sandwiches & Wraps", "offers": { "@type": "Offer", "price": "15.50", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Pies & Sausage Rolls", "description": "Add Fries +$5 · Gravy +$3", "offers": { "@type": "Offer", "price": "6.50", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "TSM Burger", "description": "Beef patty, Coney Island mustard, onion, fermented cucumbers, lettuce, tomato, American cheddar & Kielty's tomato sauce, with fries. Add Fried Egg +$3 · Burger Bacon +$4", "offers": { "@type": "Offer", "price": "23.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Triple B", "description": "Beef patty, free-range bacon, 16hr house smoked brisket, Swiss cheese, fermented cucumbers & smokey hickory & brown sugar BBQ sauce.", "offers": { "@type": "Offer", "price": "26.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Spicy Kimchi Burger", "description": "House-made buttermilk fried chicken with a spicy Korean hot honey sauce & kimchi slaw.", "offers": { "@type": "Offer", "price": "24.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Menangle Monster Schnitzel", "description": "350g chicken schnitzel, seasoned balsamic green slaw, fries & fresh lemon wedge. Add Gravy +$3", "offers": { "@type": "Offer", "price": "27.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Pan-Fried Barramundi", "description": "Crisp fried barramundi fillet over pearl couscous, finished with preserved lemons and house-made Mediterranean red sauce of olives and capers.", "offers": { "@type": "Offer", "price": "28.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Shredded Brisket Tacos", "description": "Trio of house-made 16hr beef brisket tacos with fresh red cabbage, avocado, brined onions, chipotle mayo & queso fresco.", "offers": { "@type": "Offer", "price": "24.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Open Steak Sandwich", "description": "Parmesan butter, caramelised onions, rocket, tomato & house-made persillade dressing, with fries.", "offers": { "@type": "Offer", "price": "25.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Misty Valley Mushrooms", "description": "Casarecce pasta topped with local exotic mushrooms from Misty Valley Mittagong, sautéed in herbed butter, finished with shaved parmesan. Add Chicken +$6", "offers": { "@type": "Offer", "price": "23.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "TSM Caesar Salad", "description": "Classic Caesar salad with sourdough crumble. Add Chicken +$6 · Anchovies +$2", "offers": { "@type": "Offer", "price": "22.00", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Soup of the Day", "description": "Ask the staff for today's offering, served with toasted sourdough.", "offers": { "@type": "Offer", "price": "14.50", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Fries", "description": "Bowl $8", "offers": { "@type": "Offer", "price": "5.50", "priceCurrency": "AUD" } },
+            { "@type": "MenuItem", "name": "Sweet Potato Fries", "description": "Bowl $9", "offers": { "@type": "Offer", "price": "6.50", "priceCurrency": "AUD" } }
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://anthonyallen.xyz/thestoremenangle/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are The Store Menangle's opening hours?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Monday to Friday 7am to 2pm. Saturday and Sunday 8am to 2pm."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is The Store Menangle located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2 Station Street, Menangle NSW 2568 — in the heritage general store building opposite Menangle railway station."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does The Store Menangle take bookings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, The Store Menangle is walk-in only."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's on the menu at The Store Menangle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Breakfast classics like Eggs Benny ($22) and Persian Eggs ($22), burgers including the TSM Burger ($23) and Triple B ($26), pasta, salads, plus pies, sandwiches and house-baked goods."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How old is The Store Menangle building?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The building dates to 1904 and was the original Menangle general store. It is now operated as a café."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this The Store Menangle's official website?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The Store Menangle does not have an official website. This is an unofficial fan-made menu page by Anthony Allen, sourced from the café's Google Maps listing."
+          }
+        }
+      ]
     }
+  ]
+}
   </script>
 </head>
 <body>
@@ -701,6 +871,17 @@
           </div>
 
         </div>
+      </div>
+
+      <div class="hero-img-wrap">
+        <img
+          class="hero-img"
+          src="/thestoremenangle/thestoremenangle.webp"
+          alt="The Store Menangle café in its heritage 1904 building, 2 Station Street, Menangle NSW"
+          width="1600"
+          height="1066"
+        >
+        <p class="photo-credit">Photo: <a href="https://www.facebook.com/gurphotos/" target="_blank" rel="noopener">Outkast Media</a></p>
       </div>
 
       <p class="intro">The Store is a beloved community icon in Menangle, NSW. A cafe with the best food and coffee around and no website, so <a href="https://anthonyallen.xyz">I made this unofficial one</a>. Menu sourced from their Google Maps listing.</p>
@@ -918,22 +1099,45 @@
         <p class="condiments-list">Kielty&rsquo;s BBQ Sauce &middot; Kielty&rsquo;s Tomato Sauce &middot; Drunken Sailor Tomato Relish &middot; Drunken Sailor Beetroot Relish &middot; Garlic Aioli &middot; House-Made Nashville Chilli Sauce &middot; Kewpie Mayo</p>
       </section>
 
+      <section class="faq" aria-labelledby="faq-heading">
+        <h2 id="faq-heading" class="menu-heading">About The Store Menangle</h2>
+
+        <div class="faq-item">
+          <h3>What are The Store Menangle&rsquo;s opening hours?</h3>
+          <p>Monday to Friday 7am&ndash;2pm. Saturday and Sunday 8am&ndash;2pm.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Where is The Store Menangle?</h3>
+          <p>2 Station Street, Menangle NSW 2568 &mdash; in the heritage general store building opposite Menangle railway station.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Does The Store Menangle take bookings?</h3>
+          <p>No, it&rsquo;s walk-in only.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What&rsquo;s on the menu?</h3>
+          <p>Breakfast classics like Eggs Benny ($22) and Persian Eggs ($22), burgers including the TSM Burger ($23) and Triple B ($26), pasta, salads, plus pies, sandwiches and house-baked goods. The full menu and prices are listed above.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How old is the building?</h3>
+          <p>The building dates to 1904 and was the original Menangle general store.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Is this the official website?</h3>
+          <p>No. The Store Menangle doesn&rsquo;t have an official website, so this unofficial menu page exists as a community resource. Menu and prices are sourced from the caf&eacute;&rsquo;s Google Maps listing and updated periodically.</p>
+        </div>
+      </section>
+
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <div class="footer-img-wrap">
-        <img
-          class="footer-img"
-          src="/thestoremenangle/thestoremenangle.webp"
-          alt="The Store Menangle, a heritage building on Station Street, Menangle, built in 1904."
-          loading="lazy"
-          width="1600"
-          height="1066"
-        >
-        <p class="photo-credit">Photo: <a href="https://www.facebook.com/gurphotos/" target="_blank" rel="noopener">Outkast Media</a></p>
-      </div>
       <div class="footer-contact">
         <a href="https://share.google/nB0n1uiCns1uiPZvu" target="_blank" rel="noopener">2 Station St, Menangle NSW 2568</a>
         <a href="tel:0246338101">(02) 4633 8101</a>
