@@ -6,10 +6,8 @@
   <title>The Store Menangle Menu & Prices — Café in Menangle NSW</title>
   <meta name="description" content="Full menu and prices for The Store Menangle café in Menangle, NSW. Breakfast, lunch, burgers, coffee — served daily from 7am in a heritage 1904 building.">
   <meta name="theme-color" content="#3A1D24">
-  <link rel="icon" type="image/png" sizes="96x96" href="/thestoremenangle/favicon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/thestoremenangle/favicon@2x.png">
-  <link rel="icon" type="image/png" sizes="288x288" href="/thestoremenangle/favicon@3x.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/thestoremenangle/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/thestoremenangle/favicon.png">
+  <link rel="apple-touch-icon" href="/thestoremenangle/apple-touch-icon.png">
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="preload" href="/thestoremenangle/fonts/LibreCaslonCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -79,14 +77,46 @@
 
     a {
       color: var(--link);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(194, 173, 180, 0.18);
-      transition: color 0.15s, border-color 0.15s;
+      text-decoration: underline;
+      text-decoration-color: rgba(194, 173, 180, 0.22);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color 0.15s, text-decoration-color 0.15s;
     }
 
     a:hover {
       color: var(--link-hover);
-      border-color: rgba(240, 232, 226, 0.32);
+      text-decoration-color: rgba(240, 232, 226, 0.36);
+    }
+
+    /* External-link marker — display:inline-block makes the parent's
+       text-decoration underline skip over it, so the arrow sits clean
+       to the right of the link with no underline beneath it. Stays inline,
+       so it follows the last line when the link wraps. */
+    a[target="_blank"]::after {
+      content: "\2197"; /* ↗ */
+      display: inline-block;
+      font-family: Inter, sans-serif;
+      font-size: 0.72em;
+      margin-left: 0.18em;
+      opacity: 0.45;
+      letter-spacing: 0;
+      transform: translateY(-0.45em);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    a[target="_blank"]:hover::after {
+      transform: translate(2px, -0.45em);
+      opacity: 0.9;
+    }
+
+    @supports (font-variation-settings: normal) {
+      a[target="_blank"]::after { font-family: InterVariable, sans-serif; }
+    }
+
+    /* Photo credit pill is already tight — skip the marker there. */
+    .photo-credit a[target="_blank"]::after {
+      content: none;
     }
 
     /* ---- ANIMATIONS ---- */
@@ -193,7 +223,7 @@
 
     .intro a {
       color: var(--t-body);
-      border-bottom-color: rgba(194, 173, 180, 0.25);
+      text-decoration-color: rgba(194, 173, 180, 0.28);
     }
 
     .intro a:hover {
@@ -234,12 +264,12 @@
 
     .info-value a {
       color: var(--t-body);
-      border-bottom-color: rgba(194, 173, 180, 0.2);
+      text-decoration-color: rgba(194, 173, 180, 0.22);
     }
 
     .info-value a:hover {
       color: var(--t-primary);
-      border-bottom-color: rgba(240, 232, 226, 0.28);
+      text-decoration-color: rgba(240, 232, 226, 0.32);
     }
 
     /* ---- HOURS ---- */
@@ -286,6 +316,30 @@
     .h-time {
       font-variant-numeric: tabular-nums;
       letter-spacing: 0.01em;
+    }
+
+    .hours-note {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border-med);
+      font-size: 11px;
+      color: var(--t-dim);
+      letter-spacing: 0.01em;
+      line-height: 1.5;
+    }
+
+    .hours-note-label {
+      color: var(--t-muted);
+      letter-spacing: 0.16em;
+      text-indent: 0.16em;
+      text-transform: uppercase;
+      font-size: 9px;
+      font-weight: 560;
+      margin-right: 6px;
+    }
+
+    .hours-note-time {
+      font-variant-numeric: tabular-nums;
     }
 
     /* ---- MENU HEADING ---- */
@@ -450,45 +504,135 @@
       line-height: 2;
     }
 
-    /* ---- FAQ ---- */
+    /* ---- ABOUT / FAQ ACCORDION ---- */
 
-    .faq {
+    .about {
       margin-top: 80px;
       padding-top: 56px;
       border-top: 1px solid var(--border);
     }
 
+    .about-intro {
+      font-size: 13.5px;
+      font-weight: 380;
+      color: var(--t-body);
+      line-height: 1.75;
+      max-width: 60ch;
+      margin: 0 auto 40px;
+      text-align: center;
+      text-wrap: pretty;
+    }
+
+    .faq-list {
+      border-top: 1px solid var(--border);
+    }
+
     .faq-item {
-      padding: 22px 0;
       border-bottom: 1px solid var(--border);
     }
 
-    .faq-item:last-child {
-      border-bottom: 0;
+    /* Strip <details>/<summary> defaults */
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 18px 0;
+      -webkit-tap-highlight-color: transparent;
     }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::marker { content: ""; }
 
-    .faq-item h3 {
-      font-family: inherit;
+    .faq-q {
+      flex: 1;
       font-size: 14.5px;
       font-weight: 500;
-      letter-spacing: 0.005em;
       color: var(--t-primary);
-      margin-bottom: 6px;
-      line-height: 1.3;
+      line-height: 1.4;
+      letter-spacing: 0.005em;
+      transition: color 0.2s ease;
     }
 
-    .faq-item p {
+    .faq-item summary:hover .faq-q {
+      color: var(--link-hover);
+    }
+
+    /* +/− icon — two crossed bars; vertical bar collapses on open */
+    .faq-icon {
+      position: relative;
+      width: 11px;
+      height: 11px;
+      flex-shrink: 0;
+      margin-top: 6px;
+      opacity: 0.6;
+      transition: opacity 0.2s ease, transform 0.3s ease;
+    }
+    .faq-item summary:hover .faq-icon {
+      opacity: 0.9;
+    }
+    .faq-icon::before,
+    .faq-icon::after {
+      content: "";
+      position: absolute;
+      background: currentColor;
+      transition: transform 0.28s ease;
+    }
+    .faq-icon::before {
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      transform: translateY(-50%);
+    }
+    .faq-icon::after {
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      transform: translateX(-50%) scaleY(1);
+      transform-origin: center;
+    }
+    .faq-item[open] .faq-icon::after {
+      transform: translateX(-50%) scaleY(0);
+    }
+    /* During the close animation [open] is still present — restore the + icon. */
+    .faq-item.is-closing .faq-icon::after {
+      transform: translateX(-50%) scaleY(1);
+    }
+
+    /* Sliding answer — grid-template-rows 0fr → 1fr trick (cross-browser).
+       Keeps content rendered; the grid track height animates smoothly. */
+    .faq-item .faq-a-wrap {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.32s ease;
+    }
+    .faq-item[open] .faq-a-wrap {
+      grid-template-rows: 1fr;
+    }
+    .faq-item.is-closing .faq-a-wrap {
+      grid-template-rows: 0fr;
+    }
+    .faq-a {
+      overflow: hidden;
+    }
+    .faq-a p {
       font-size: 13px;
       font-weight: 380;
       color: var(--t-body);
-      line-height: 1.6;
-      max-width: 520px;
+      line-height: 1.7;
+      max-width: 60ch;
+      padding-bottom: 18px;
     }
 
     /* ---- FOOTER ---- */
 
     .site-footer {
+      margin-top: 80px;
+      padding-top: 56px;
       padding-bottom: 72px;
+      border-top: 1px solid var(--border);
     }
 
     .footer-contact {
@@ -500,13 +644,13 @@
     .footer-contact a {
       font-size: 13px;
       color: var(--t-muted);
-      border-bottom-color: transparent;
+      text-decoration: none;
       line-height: 2.1;
     }
 
     .footer-contact a:hover {
       color: var(--t-body);
-      border-bottom-color: transparent;
+      text-decoration: none;
     }
 
     .footer-disclaimer {
@@ -517,12 +661,12 @@
 
     .footer-disclaimer a {
       color: var(--t-dim);
-      border-bottom-color: transparent;
+      text-decoration: none;
     }
 
     .footer-disclaimer a:hover {
       color: var(--t-muted);
-      border-bottom-color: transparent;
+      text-decoration: none;
     }
 
     .hero-img-wrap {
@@ -558,12 +702,12 @@
 
     .photo-credit a {
       color: rgba(255, 255, 255, 0.82);
-      border-bottom-color: transparent;
+      text-decoration: none;
     }
 
     .photo-credit a:hover {
       color: rgba(255, 255, 255, 1);
-      border-bottom-color: transparent;
+      text-decoration: none;
     }
 
     /* ---- RESPONSIVE ---- */
@@ -632,9 +776,14 @@
         height: 220px;
       }
 
-      .faq {
+      .about {
         margin-top: 56px;
         padding-top: 40px;
+      }
+
+      .about-intro {
+        text-align: left;
+        margin-bottom: 32px;
       }
     }
   </style>
@@ -671,20 +820,19 @@
       "name": "The Store Menangle",
       "alternateName": "The Menangle Store",
       "image": "https://anthonyallen.xyz/thestoremenangle/thestoremenangle.webp",
-      "description": "Breakfast, lunch, coffee and curated groceries in a heritage building since 1904.",
+      "description": "A café in a 1904 heritage building in Menangle, NSW, serving Mecca coffee, Sonoma bread and pastries, breakfast and lunch, alongside boutique groceries, local produce and the Menangle Post Office.",
       "url": "https://anthonyallen.xyz/thestoremenangle/",
       "servesCuisine": ["Australian", "Cafe"],
-      "acceptsReservations": false,
       "foundingDate": "1904",
-      "priceRange": "$$",
+      "priceRange": "$20–40",
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "-34.1178",
-        "longitude": "150.7425"
+        "latitude": "-34.1272",
+        "longitude": "150.7390"
       },
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "2 Station St",
+        "streetAddress": "2 Station Street",
         "addressLocality": "Menangle",
         "addressRegion": "NSW",
         "postalCode": "2568",
@@ -697,7 +845,13 @@
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "dayOfWeek": "Monday",
+          "opens": "06:30",
+          "closes": "15:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"],
           "opens": "07:00",
           "closes": "14:00"
         },
@@ -766,7 +920,7 @@
           "name": "What are The Store Menangle's opening hours?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Monday to Friday 7am to 2pm. Saturday and Sunday 8am to 2pm."
+            "text": "Monday 6:30am–3pm. Tuesday to Friday 7am–2pm. Saturday and Sunday 8am–2pm."
           }
         },
         {
@@ -774,31 +928,55 @@
           "name": "Where is The Store Menangle located?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "2 Station Street, Menangle NSW 2568 — in the heritage general store building opposite Menangle railway station."
+            "text": "2 Station Street, Menangle NSW 2568, in the village of Menangle in Wollondilly Shire, south-west of Sydney."
           }
         },
         {
           "@type": "Question",
-          "name": "Does The Store Menangle take bookings?",
+          "name": "What coffee and bread does The Store Menangle serve?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No, The Store Menangle is walk-in only."
+            "text": "The Store Menangle serves Mecca coffee, Sonoma bread and pastries, alongside Cedar Creek Cider and a selection of local produce."
           }
         },
         {
           "@type": "Question",
-          "name": "What's on the menu at The Store Menangle?",
+          "name": "Is The Store Menangle in a heritage building?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Breakfast classics like Eggs Benny ($22) and Persian Eggs ($22), burgers including the TSM Burger ($23) and Triple B ($26), pasta, salads, plus pies, sandwiches and house-baked goods."
+            "text": "Yes. The building was built in 1904 to a design by the prominent Sydney architecture firm Sulman and Power. It has operated over the years as a barn, function space, accommodation, general store, bottle shop and post office, and now houses a café and the Menangle Post Office. The original bakery's ovens are still intact."
           }
         },
         {
           "@type": "Question",
-          "name": "How old is The Store Menangle building?",
+          "name": "Does The Store Menangle sell groceries?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The building dates to 1904 and was the original Menangle general store. It is now operated as a café."
+            "text": "Yes. Alongside the café menu, The Store stocks boutique grocery items including Sonoma bread, pastries, jams, pickles, cold meats, fresh flowers, Cedar Creek Cider and a rotating selection of local produce and pantry staples."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a post office at The Store Menangle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Menangle Post Office operates from the same building as The Store Menangle café and is open Monday to Friday 9am to 5pm. The shared phone number for both is (02) 4633 8101."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I contact The Store Menangle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Phone (02) 4633 8101 or email admin@thestoremenangle.com.au. They are also active on Instagram and Facebook."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is The Store Menangle accessible?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Destination NSW lists The Store Menangle as actively welcoming people with access needs."
           }
         },
         {
@@ -806,7 +984,7 @@
           "name": "Is this The Store Menangle's official website?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. The Store Menangle does not have an official website. This is an unofficial fan-made menu page by Anthony Allen, sourced from the café's Google Maps listing."
+            "text": "No. The Store Menangle does not currently have an official website. This is an unofficial menu page by Anthony Allen, with menu and prices sourced from the café's Google Maps listing and other published sources."
           }
         }
       ]
@@ -847,8 +1025,12 @@
                 <span class="section-label">Hours</span>
               </div>
               <div class="hours-rows" id="hours-table">
+                <div class="hours-row" data-days="0">
+                  <span class="h-day">Mon</span>
+                  <span class="h-time">6:30 am &ndash; 3 pm</span>
+                </div>
                 <div class="hours-row" data-days="1,2,3,4">
-                  <span class="h-day">Mon &ndash; Fri</span>
+                  <span class="h-day">Tue &ndash; Fri</span>
                   <span class="h-time">7 am &ndash; 2 pm</span>
                 </div>
                 <div class="hours-row" data-days="5,6">
@@ -856,6 +1038,7 @@
                   <span class="h-time">8 am &ndash; 2 pm</span>
                 </div>
               </div>
+              <p class="hours-note"><span class="hours-note-label">Post Office</span> <span class="hours-note-time">Mon &ndash; Fri 9 am &ndash; 5 pm</span></p>
             </div>
           </div>
 
@@ -1097,37 +1280,83 @@
         <p class="condiments-list">Kielty&rsquo;s BBQ Sauce &middot; Kielty&rsquo;s Tomato Sauce &middot; Drunken Sailor Tomato Relish &middot; Drunken Sailor Beetroot Relish &middot; Garlic Aioli &middot; House-Made Nashville Chilli Sauce &middot; Kewpie Mayo</p>
       </section>
 
-      <section class="faq" aria-labelledby="faq-heading">
-        <h2 id="faq-heading" class="menu-heading">About</h2>
+      <section class="about" aria-labelledby="about-heading">
+        <h2 id="about-heading" class="menu-heading">About</h2>
 
-        <div class="faq-item">
-          <h3>What are The Store Menangle&rsquo;s opening hours?</h3>
-          <p>Monday to Friday 7am&ndash;2pm. Saturday and Sunday 8am&ndash;2pm.</p>
-        </div>
+        <p class="about-intro">The Store Menangle is a caf&eacute; and boutique grocer in a 1904 heritage building at 2 Station Street, Menangle, in Wollondilly Shire south-west of Sydney. The building was designed by the prominent Sydney architecture firm Sulman and Power and has operated over the years as a barn, function space, accommodation, general store, bottle shop and post office. Today it houses the caf&eacute;, the Menangle Post Office, and the original bakery&rsquo;s ovens are still intact.</p>
 
-        <div class="faq-item">
-          <h3>Where is The Store Menangle?</h3>
-          <p>2 Station Street, Menangle NSW 2568 &mdash; in the heritage general store building opposite Menangle railway station.</p>
-        </div>
+        <div class="faq-list">
 
-        <div class="faq-item">
-          <h3>Does The Store Menangle take bookings?</h3>
-          <p>No, it&rsquo;s walk-in only.</p>
-        </div>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">What are The Store Menangle&rsquo;s opening hours?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a-wrap"><div class="faq-a">
+              <p>Monday 6:30am&ndash;3pm. Tuesday to Friday 7am&ndash;2pm. Saturday and Sunday 8am&ndash;2pm.</p>
+            </div></div>
+          </details>
 
-        <div class="faq-item">
-          <h3>What&rsquo;s on the menu?</h3>
-          <p>Breakfast classics like Eggs Benny ($22) and Persian Eggs ($22), burgers including the TSM Burger ($23) and Triple B ($26), pasta, salads, plus pies, sandwiches and house-baked goods. The full menu and prices are listed above.</p>
-        </div>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">What coffee and bread does The Store serve?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a-wrap"><div class="faq-a">
+              <p>Mecca coffee, Sonoma bread and pastries, Cedar Creek Cider and a rotating selection of local produce.</p>
+            </div></div>
+          </details>
 
-        <div class="faq-item">
-          <h3>How old is the building?</h3>
-          <p>The building dates to 1904 and was the original Menangle general store.</p>
-        </div>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">Does The Store sell groceries?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a-wrap"><div class="faq-a">
+              <p>Yes. Alongside the caf&eacute; menu, The Store stocks boutique grocery items &mdash; Sonoma bread, pastries, jams, pickles, cold meats, fresh flowers, Cedar Creek Cider and a rotating selection of local produce and pantry staples.</p>
+            </div></div>
+          </details>
 
-        <div class="faq-item">
-          <h3>Is this the official website?</h3>
-          <p>No. The Store Menangle doesn&rsquo;t have an official website, so this unofficial menu page exists as a community resource. Menu and prices are sourced from the caf&eacute;&rsquo;s Google Maps listing and updated periodically.</p>
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">Is there a post office at The Store?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a-wrap"><div class="faq-a">
+              <p>Yes. The Menangle Post Office operates from the same building, open Monday to Friday 9am&ndash;5pm. The phone number is shared: <a href="tel:+61246338101">(02) 4633 8101</a>.</p>
+            </div></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">How do I contact The Store Menangle?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a-wrap"><div class="faq-a">
+              <p>Phone <a href="tel:+61246338101">(02) 4633 8101</a> or email <a href="mailto:admin@thestoremenangle.com.au">admin@thestoremenangle.com.au</a>. For bookings or function enquiries, call the caf&eacute; directly.</p>
+            </div></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">Is The Store Menangle accessible?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a-wrap"><div class="faq-a">
+              <p>Yes &mdash; Destination NSW lists The Store Menangle as actively welcoming people with access needs.</p>
+            </div></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span class="faq-q">Is this the official website?</span>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-a-wrap"><div class="faq-a">
+              <p>No. The Store Menangle doesn&rsquo;t currently have an official website, so this unofficial menu page exists as a community resource. Menu and prices are sourced from the caf&eacute;&rsquo;s Google Maps listing and other published sources, and updated periodically.</p>
+            </div></div>
+          </details>
+
         </div>
       </section>
 
@@ -1137,7 +1366,6 @@
   <footer class="site-footer">
     <div class="wrap">
       <div class="footer-contact">
-        <a href="https://share.google/nB0n1uiCns1uiPZvu" target="_blank" rel="noopener">2 Station St, Menangle NSW 2568</a>
         <a href="tel:0246338101">(02) 4633 8101</a>
         <a href="mailto:admin@thestoremenangle.com.au">admin@thestoremenangle.com.au</a>
         <a href="https://instagram.com/thestoremenangle" target="_blank" rel="noopener">Instagram</a>
@@ -1153,17 +1381,55 @@
       var now    = new Date();
       var day    = now.getDay();
       var hour   = now.getHours() + now.getMinutes() / 60;
-      var mapped = day === 0 ? 6 : day - 1;
+      var mapped = day === 0 ? 6 : day - 1; // Mon=0, ..., Sun=6
 
       document.querySelectorAll('#hours-table .hours-row').forEach(function (row) {
         var days = row.getAttribute('data-days').split(',').map(Number);
         if (days.indexOf(mapped) !== -1) row.classList.add('today');
       });
 
-      var isWeekend = (day === 0 || day === 6);
-      var openHour  = isWeekend ? 8 : 7;
-      var isOpen    = day >= 1 && day <= 6 && hour >= openHour && hour < 14;
-      if (isOpen) document.getElementById('hours-container').classList.add('is-open');
+      var open, close;
+      if (mapped === 0)                       { open = 6.5; close = 15; }   // Mon 6:30am–3pm
+      else if (mapped >= 1 && mapped <= 4)    { open = 7;   close = 14; }   // Tue–Fri 7am–2pm
+      else                                    { open = 8;   close = 14; }   // Sat–Sun 8am–2pm
+
+      if (hour >= open && hour < close) {
+        document.getElementById('hours-container').classList.add('is-open');
+      }
+    })();
+
+    /* FAQ accordion: animate close as well as open. <details> defaults to
+       hiding children instantly when [open] is removed — intercept the
+       close click, let the grid-template-rows transition run, then drop the
+       attribute. */
+    (function () {
+      document.querySelectorAll('.faq-item').forEach(function (item) {
+        var summary = item.querySelector('summary');
+        var wrap    = item.querySelector('.faq-a-wrap');
+        if (!summary || !wrap) return;
+
+        summary.addEventListener('click', function (e) {
+          if (!item.open) return; // opening: let the default behaviour run
+          e.preventDefault();
+          item.classList.add('is-closing');
+          var done = false;
+          var finish = function () {
+            if (done) return;
+            done = true;
+            item.open = false;
+            item.classList.remove('is-closing');
+            wrap.removeEventListener('transitionend', onEnd);
+          };
+          var onEnd = function (ev) {
+            if (ev.target === wrap && ev.propertyName === 'grid-template-rows') {
+              finish();
+            }
+          };
+          wrap.addEventListener('transitionend', onEnd);
+          // Safety net in case the transitionend doesn't fire (eg. reduced motion).
+          window.setTimeout(finish, 400);
+        });
+      });
     })();
   </script>
 
