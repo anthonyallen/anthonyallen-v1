@@ -239,12 +239,36 @@
 
     .find-us-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      column-gap: 48px;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 56px;
     }
 
     .info-col {
       padding: 40px 0;
+    }
+
+    /* Google rating sits as a small trust badge below the 2-col grid. */
+    .find-us-rating {
+      text-align: center;
+      padding: 0 0 28px;
+      font-size: 12px;
+      color: var(--t-muted);
+      letter-spacing: 0.04em;
+    }
+
+    .find-us-rating a {
+      color: var(--t-muted);
+      text-decoration-color: transparent;
+    }
+
+    .find-us-rating a:hover {
+      color: var(--t-body);
+      text-decoration-color: rgba(194, 173, 180, 0.28);
+    }
+
+    .find-us-rating .star {
+      color: #C4A86E;
+      margin-right: 4px;
     }
 
     .info-block {
@@ -300,46 +324,53 @@
       animation: pulse 2.5s ease infinite;
     }
 
+    /* Use a 2-column grid so all times align under each other regardless of
+       how wide the day label is (Mon vs Tue – Fri vs Sat – Sun). */
     .hours-rows {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 18px;
+      row-gap: 5px;
+      font-size: 14px;
+      color: var(--t-body);
     }
 
     .hours-row {
-      display: flex;
-      gap: 16px;
-      font-size: 14px;
-      color: var(--t-body);
+      display: contents;
     }
 
     .h-time {
       font-variant-numeric: tabular-nums;
       letter-spacing: 0.01em;
+      white-space: nowrap;
     }
 
     .hours-note {
-      margin-top: 12px;
-      padding-top: 10px;
+      margin-top: 14px;
+      padding-top: 12px;
       border-top: 1px dashed var(--border-med);
-      font-size: 11px;
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      font-size: 12px;
       color: var(--t-dim);
-      letter-spacing: 0.01em;
       line-height: 1.5;
     }
 
     .hours-note-label {
-      color: var(--t-muted);
-      letter-spacing: 0.16em;
-      text-indent: 0.16em;
-      text-transform: uppercase;
       font-size: 9px;
-      font-weight: 560;
-      margin-right: 6px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-indent: 0.28em;
+      text-transform: uppercase;
+      color: var(--t-muted);
+      flex-shrink: 0;
     }
 
     .hours-note-time {
       font-variant-numeric: tabular-nums;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
     }
 
     /* ---- MENU HEADING ---- */
@@ -1042,16 +1073,11 @@
             </div>
           </div>
 
-          <div class="info-col">
-            <div class="info-block">
-              <span class="section-label">Google Reviews</span>
-              <div class="info-value">
-                <a href="https://share.google/nB0n1uiCns1uiPZvu" target="_blank" rel="noopener">&#9733;&thinsp;4.7 &middot; 244+ reviews</a>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        <p class="find-us-rating">
+          <a href="https://share.google/nB0n1uiCns1uiPZvu" target="_blank" rel="noopener"><span class="star">&#9733;</span>4.7 &middot; 244+ Google reviews</a>
+        </p>
       </div>
 
       <div class="hero-img-wrap">
