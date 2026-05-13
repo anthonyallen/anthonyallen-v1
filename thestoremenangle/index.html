@@ -730,8 +730,10 @@
       line-height: 1;
     }
 
-    .hero-rating::after {
-      content: none; /* suppress the global external-link arrow on this pill */
+    /* Specificity has to beat a[target="_blank"]::after — the attribute
+       selector outranks a plain class selector, so we include both here. */
+    .hero-rating[target="_blank"]::after {
+      content: none;
     }
 
     /* ---- RESPONSIVE ---- */
