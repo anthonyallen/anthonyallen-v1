@@ -6,8 +6,10 @@
   <title>The Store Menangle Menu & Prices — Café in Menangle NSW</title>
   <meta name="description" content="Full menu and prices for The Store Menangle café in Menangle, NSW. Breakfast, lunch, burgers, coffee — served daily from 7am in a heritage 1904 building.">
   <meta name="theme-color" content="#3A1D24">
-  <link rel="icon" type="image/png" href="/thestoremenangle/favicon.png">
-  <link rel="apple-touch-icon" href="/thestoremenangle/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/thestoremenangle/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/thestoremenangle/favicon@2x.png">
+  <link rel="icon" type="image/png" sizes="288x288" href="/thestoremenangle/favicon@3x.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/thestoremenangle/apple-touch-icon.png">
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="preload" href="/thestoremenangle/fonts/LibreCaslonCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -202,7 +204,6 @@
 
     .find-us-section {
       border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
       animation: fadeUp 0.65s 0.16s ease both;
     }
 
@@ -467,20 +468,21 @@
     }
 
     .faq-item h3 {
-      font-family: "Libre Caslon Condensed", "Instrument Serif", serif;
-      font-size: 22px;
-      font-weight: 400;
+      font-family: inherit;
+      font-size: 14.5px;
+      font-weight: 500;
       letter-spacing: 0.005em;
       color: var(--t-primary);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       line-height: 1.3;
     }
 
     .faq-item p {
-      font-size: 13.5px;
+      font-size: 13px;
+      font-weight: 380;
       color: var(--t-body);
-      line-height: 1.7;
-      max-width: 60ch;
+      line-height: 1.6;
+      max-width: 520px;
     }
 
     /* ---- FOOTER ---- */
@@ -633,10 +635,6 @@
       .faq {
         margin-top: 56px;
         padding-top: 40px;
-      }
-
-      .faq-item h3 {
-        font-size: 20px;
       }
     }
   </style>
@@ -1100,7 +1098,7 @@
       </section>
 
       <section class="faq" aria-labelledby="faq-heading">
-        <h2 id="faq-heading" class="menu-heading">About The Store Menangle</h2>
+        <h2 id="faq-heading" class="menu-heading">About</h2>
 
         <div class="faq-item">
           <h3>What are The Store Menangle&rsquo;s opening hours?</h3>
