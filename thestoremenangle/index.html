@@ -634,6 +634,10 @@
         text-align: left;
         max-width: none;
         margin: 32px 0 0;
+        /* On narrow widths, "pretty" pulls earlier lines in to balance
+           with the last line — reads as a phantom right margin. Greedy
+           wrap fills the width edge to edge. */
+        text-wrap: auto;
       }
 
       .find-us-grid {
